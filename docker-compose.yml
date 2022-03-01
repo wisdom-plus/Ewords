@@ -11,12 +11,18 @@ services:
     stdin_open: true
     depends_on:
       - db
+      - chrome
   db:
     image: postgres:14.1
     volumes:
       - postgresql-data:/var/lib/postgresql/data:delegated
     environment:
       POSTGRES_PASSWORD: password
+  chrome:
+    image: selenium/standalone-chrome:latest
+    shm_size: 256m
+    ports:
+      - "4444:4444"
 
 volumes:
   postgresql-data:
