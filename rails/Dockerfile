@@ -18,8 +18,8 @@ RUN apk  --no-cache add linux-headers\
                         libc-dev\
                         nodejs\
                         tzdata\
-                        mysql-client \
-                        mysql-dev \
+                        postgresql \
+                        postgresql-dev \
                         git \
                         less \
                         imagemagick \
