@@ -30,6 +30,4 @@ RUN apk  --no-cache add linux-headers\
 
 COPY . .
 
-RUN yarn install && yarn cache clean
-
 EXPOSE 3000
