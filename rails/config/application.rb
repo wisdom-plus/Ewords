@@ -38,5 +38,6 @@ module Ewords
     config.add_autoload_paths_to_load_path = false
     config.generators.system_tests = nil
     config.generators.template_engine = :slim
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
   end
 end

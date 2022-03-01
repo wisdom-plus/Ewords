@@ -53,8 +53,7 @@ gem 'html2slim'
 
 gem 'dotenv-rails'
 
-gem 'rails-i18n'
-
+gem 'rails-i18n', '~> 7.0.0'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
