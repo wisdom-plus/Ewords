@@ -9,7 +9,7 @@ ARG USER_NAME="rails"
 RUN addgroup -S -g "${GROUP_ID}" "${USER_NAME}" && \
   adduser -u "${USER_ID}" -G "${USER_NAME}" -D "${USER_NAME}"
 
-COPY Gemfile Gemfile.lock package.json yarn.lock ./
+COPY Gemfile Gemfile.lock ./
 
 RUN apk  --no-cache add linux-headers\
                         libxml2-dev\
