@@ -40,11 +40,11 @@ module Ewords
     config.generators.template_engine = :slim
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
     config.generators do |g|
-      g.test_frameword :rspec
-        view_spec: false
-        helper_spec: false
-        model_spec: false
-        routing_spec: false
+      g.test_framework :rspec,
+        view_spec: false,
+        helper_spec: false,
+        model_spec: false,
+        routing_spec: false,
     end
   end
 end
