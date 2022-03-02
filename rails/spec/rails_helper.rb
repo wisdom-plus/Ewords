@@ -3,7 +3,7 @@ require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'capybara/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -77,14 +77,14 @@ RSpec.configure do |config|
 end
 
 Capybara.register_driver :remote_chrome do |app|
-  url = "http://chrome:4444/wd/hub"
+  url = 'http://chrome:4444/wd/hub'
   caps = ::Selenium::WebDriver::Remote::Capabilities.chrome(
-    "goog:chromeOptions" => {
-      "args" => [
-        "no-sandbox",
-        "headless",
-        "disable-gpu",
-        "window-size=1024,640"
+    'goog:chromeOptions' => {
+      'args' => [
+        'no-sandbox',
+        'headless',
+        'disable-gpu',
+        'window-size=1024,640'
       ]
     }
   )
