@@ -44,7 +44,7 @@ module Ewords
         view_spec: false,
         helper_spec: false,
         model_spec: false,
-        routing_spec: false,
+        routing_spec: false
     end
   end
 end
