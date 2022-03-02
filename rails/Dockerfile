@@ -23,8 +23,10 @@ RUN apk  --no-cache add linux-headers\
                         git \
                         less \
                         imagemagick \
-                        yarn &&\
-    apk add --virtual build-dependencies --no-cache build-base curl-dev &&\
+                        yarn \
+                        build-base \
+                        gcompat &&\
+    apk add --virtual build-dependencies --no-cache curl-dev &&\
     bundle install -j4 &&\
     apk del build-dependencies
 
