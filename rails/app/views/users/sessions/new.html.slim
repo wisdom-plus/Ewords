@@ -1,18 +1,32 @@
-h2
-  | Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-  br
-  = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-  br
-  = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
+.flex.flex-col.max-w-md.p-6.rounded-md.sm:p-10.dark:bg-coolGray-900.dark:text-coolGray-100
+  .mb-8.text-center
+    h1.my-3.text-4xl.font-bold
+      | Sign in
+    p.text-sm.dark:text-coolGray-400
+      | Sign in to access your account
+  =form_with resource, as: resource_name, url: session_path(resource_name),class: 'space-y-12 ng-untouched ng-pristine ng-valid' do |f|
+    .space-y-4
+      div
+        = f.label :email, class: 'block mb-2 text-sm'
+          | Email address
+        = f.email_field :email, autofoucus: true,autocomplete: 'email', placeholder: 'E-mail address', class: 'w-full px-3 py-2 border rounded-md dark:border-coolGray-700 dark:bg-coolGray-900 dark:text-coolGray-100'
+      div
+        .flex.justify-between.mb-2
+          = f.label :password,class: 'text-sm'
+            | Password
+          a.text-xs.hover:underline.dark:text-coolGray-400[rel="noopener noreferrer" href="#"]
+            | Forgot password?
+        = f.password_field :password, autocomplete: 'password',placeholder: 'Password',class: 'w-full px-3 py-2 border rounded-md dark:border-coolGray-700 dark:bg-coolGray-900 dark:text-coolGray-100'
+      div
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+    .space-y-2
+      div
+        = f.submit 'Sign in', class: 'w-full px-8 py-3 rounded-md dark:bg-violet-400 dark:text-coolGray-900'
+      p.px-6.text-sm.text-center.dark:text-coolGray-400
+        | Don't have an account yet?
+        a.hover:underline.dark:text-violet-400[rel="noopener noreferrer" href="#"]
+          | Sign up
 = render "users/shared/links"
