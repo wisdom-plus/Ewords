@@ -1,24 +1,30 @@
-h2
-  | Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "users/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-  br
-  = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
-  br
-  = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-  br
-  = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "users/shared/links"
+div class='flex flex-col max-w-lg mx-auto p-6 mt-16 shadow-lg rounded-md sm:p-10 dark:bg-coolGray-900 dark:text-coolGray-100'
+  .mb-8.text-center
+    h1.my-3.text-4xl.font-bold
+      | 新規作成
+  =form_with model: @user, url: user_registration_path,class: 'space-y-12 ng-untouched ng-pristine ng-valid' do |f|
+    = render "users/shared/error_messages", resource: resource
+    .space-y-4
+      div
+        = f.label :email, class: 'block mb-2 text-sm'
+          | メールアドレス
+        = f.email_field :email, autofoucus: true,autocomplete: 'email', placeholder: 'E-mail address', class: 'w-full px-3 py-2 border rounded-md dark:border-coolGray-700 dark:bg-coolGray-900 dark:text-coolGray-100'
+      div
+        .flex.justify-between.mb-2
+          = f.label :password,class: 'text-sm'
+          - if @minimum_password_length
+            p
+              |
+              = @minimum_password_length
+              |  文字以上
+        = f.password_field :password, autocomplete: 'password',placeholder: 'Password',class: 'w-full px-3 py-2 border rounded-md dark:border-coolGray-700 dark:bg-coolGray-900 dark:text-coolGray-100'
+      div
+        .flex.justify-between.mb-2
+          = f.label :password_confirmation, class: 'text-sm'
+            | パスワード確認
+        = f.password_field :password_confirmation,autocomplete: 'password_confirmation',placeholder: 'Password Confirmation',class: 'w-full px-3 py-2 border rounded-md dark:border-coolGray-700 dark:bg-coolGray-900 dark:text-coolGray-100'
+    .space-y-2
+      div
+        = f.submit 'サインアップ', class: 'w-full px-8 py-3 rounded-md dark:bg-violet-400 dark:text-coolGray-900'
+  div class="bg-gray-50 mt-8 max-w-lg shadow-lg mx-auto border-2 rounded-xl p-4"
+    = render "users/shared/links"
