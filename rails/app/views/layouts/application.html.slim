@@ -15,6 +15,6 @@ html
     main.bg-gray-100.dark:bg-gray-800.h-screen.overflow-hidden.relative
       .flex.items-start.justify-between
         = render 'shared/sidebar'
-        .flex.flex-col.w-full.md:space-y-4
+        .flex.flex-col.w-full.md:space-y-4.overflow-auto
           = render 'shared/header'
           = yield
