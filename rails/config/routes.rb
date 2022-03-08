@@ -60,6 +60,9 @@
 #               GET  /:id/attachments/:file(.:format) letter_opener_web/letters#attachment
 
 Rails.application.routes.draw do
+  devise_scope :user do
+    get 'users', to: 'devise/sessions#new'
+  end
   devise_for :users, :controllers => {
     :confirmations => 'users/confirmations',
     :registrations => 'users/registrations',
@@ -67,10 +70,7 @@ Rails.application.routes.draw do
     :passwords => 'users/passwords'
   }
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
   get '/dashboard' => 'home#dashboard'
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
