@@ -70,7 +70,6 @@ Rails.application.routes.draw do
     :passwords => 'users/passwords'
   }
 
-
-  get '/dashboard' => 'home#dashboard'
+  root to:'home#dashboard'
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
