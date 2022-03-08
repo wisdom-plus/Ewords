@@ -1,9 +1,8 @@
-div class='flex flex-col max-w-lg mx-auto p-6 mt-16 shadow-lg rounded-md sm:p-10 dark:bg-coolGray-900 dark:text-coolGray-100'
+div class='flex flex-col w-2/5 max-w-3xl mx-auto p-6 mt-16 shadow-lg rounded-md sm:p-10 dark:bg-coolGray-900 dark:text-coolGray-100'
   .mb-8.text-center
     h1.my-3.text-4xl.font-bold
       | 新規作成
   =form_with model: @user, url: user_registration_path,class: 'space-y-12 ng-untouched ng-pristine ng-valid' do |f|
-    = render "users/shared/error_messages", resource: resource
     .space-y-4
       div
         = f.label :name, class: 'block mb-2 text-sm'
@@ -30,5 +29,6 @@ div class='flex flex-col max-w-lg mx-auto p-6 mt-16 shadow-lg rounded-md sm:p-10
     .space-y-2
       div.flex.justify-center
         = f.submit 'サインアップ', class: 'px-8 py-3 rounded-md dark:bg-violet-400 dark:text-coolGray-900'
+    = render "users/shared/error_messages", resource: resource
   div class="bg-gray-50 mt-8 max-w-lg shadow-lg mx-auto border-2 rounded-xl p-4"
     = render "users/shared/links"
