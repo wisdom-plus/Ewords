@@ -2,12 +2,12 @@
   .flex-1.h-full.max-w-4xl.mx-auto.overflow-hidden.bg-white.rounded-lg.shadow-xl.dark:bg-gray-800
     .flex.flex-col.overflow-y-auto.md:flex-row
       .h-32.md:h-auto.md:w-1/2
-        = image_tag 'login_office.jpg', class: 'object-cover w-full h-full dark:hidden', alt:'Office'
-        = image_tag 'login_office_dark.jpg', class: 'hidden object-cover w-full h-full dark:block', alt:'Office'
+        = image_tag 'confirmation.jpg', class: 'object-cover w-full h-full dark:hidden', alt:'Office'
+        = image_tag 'confirmation_dark.jpg', class: 'hidden object-cover w-full h-full dark:block', alt:'Office'
       .flex.items-center.justify-center.p-6.sm:p-12.md:w-1/2
         = form_with model: @user,url: user_confirmation_path,class: 'w-full' do |f|
           h1.mb-4.text-xl.font-semibold.text-gray-700.dark:text-gray-200
-            |  Forgot password
+            |  Confirmation Mail
           = f.label :email, class: 'block text-sm'
             span.text-gray-700.dark:text-gray-400
               | Email
