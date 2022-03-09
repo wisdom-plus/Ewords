@@ -1,16 +1,22 @@
-div class='flex flex-col w-2/5 max-w-3xl  mx-auto p-6 mt-16 shadow-lg rounded-md sm:p-10 dark:bg-coolGray-900 dark:text-coolGray-100'
-  .mb-8.text-center
-    h1.my-3.text-4xl.font-bold
-      | 確認メールを再送する
-  =form_with model: @user, url: user_confirmation_path,class: 'space-y-12 ng-untouched ng-pristine ng-valid' do |f|
-    = render "users/shared/error_messages", resource: resource
-    .space-y-4
-      div
-        = f.label :email, class: 'block mb-2 text-sm'
-          | メールアドレス
-        = f.email_field :email, autofoucus: true,autocomplete: 'email', placeholder: 'E-mail address', class: 'w-full px-3 py-2 border rounded-md dark:border-coolGray-700 dark:bg-coolGray-900 dark:text-coolGray-100'
-    .space-y-2
-      div.flex.justify-center
-        = f.submit '送信', class: 'px-8 py-3 rounded-md dark:bg-violet-400 dark:text-coolGray-900'
-  div class="bg-gray-50 mt-8 max-w-lg shadow-lg mx-auto border-2 rounded-xl p-4"
-    = render "users/shared/links"
+.flex.items-center.min-h-screen.p-6.bg-gray-50.dark:bg-gray-900
+  .flex-1.h-full.max-w-4xl.mx-auto.overflow-hidden.bg-white.rounded-lg.shadow-xl.dark:bg-gray-800
+    .flex.flex-col.overflow-y-auto.md:flex-row
+      .h-32.md:h-auto.md:w-1/2
+        = image_tag 'login_office.jpg', class: 'object-cover w-full h-full dark:hidden', alt:'Office'
+        = image_tag 'login_office_dark.jpg', class: 'hidden object-cover w-full h-full dark:block', alt:'Office'
+      .flex.items-center.justify-center.p-6.sm:p-12.md:w-1/2
+        = form_with model: @user,url: user_confirmation_path,class: 'w-full' do |f|
+          h1.mb-4.text-xl.font-semibold.text-gray-700.dark:text-gray-200
+            |  Forgot password
+          = f.label :email, class: 'block text-sm'
+            span.text-gray-700.dark:text-gray-400
+              | Email
+            = f.email_field :email, autofocus: true,autocomplete:'email', placeholder: 'E-mail Address',class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
+          = f.submit 'Send',class: 'block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
+          hr.my-8
+          p.mt-4
+            = link_to 'Login',new_user_session_path, class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
+          p.mt-1
+            = link_to 'Create account', new_user_registration_path,class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
+          p.mt-1
+            = link_to 'Forgot your password?',new_user_password_path, class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
