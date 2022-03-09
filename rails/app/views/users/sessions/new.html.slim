@@ -5,7 +5,7 @@
         = image_tag 'login_office.jpg', class: 'object-cover w-full h-full dark:hidden', alt:'Office'
         = image_tag 'login_office_dark.jpg', class: 'hidden object-cover w-full h-full dark:block', alt:'Office'
       .flex.items-center.justify-center.p-6.sm:p-12.md:w-1/2
-        = form_with model: @user, url: user_session_path(resource_name),class:'w-full' do |f|
+        = form_with model: @user, url: user_session_path,class:'w-full' do |f|
           h1.mb-4.text-xl.font-semibold.text-gray-700.dark:text-gray-200
             |  Login
           = f.label :email, class: 'block text-sm'
@@ -15,7 +15,7 @@
           = f.label :password, class: 'block text-sm mt-4'
             span.text-gray-700.dark:text-gray-400
               | Password
-            = f.email_field :password, autofoucus: true,autocomplete: 'password', placeholder: 'Password', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
+            = f.password_field :password, autofoucus: true,autocomplete: 'password', placeholder: 'Password', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
           = f.submit 'Log in',class: 'block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
           hr.my-8
           button.flex.items-center.justify-center.w-full.px-4.py-2.mt-4.text-sm.font-medium.leading-5.text-gray-700.transition-colors.duration-150.border.border-gray-300.rounded-lg.dark:text-gray-400.active:bg-transparent.hover:border-gray-500.focus:border-gray-500.active:text-gray-500.focus:outline-none.focus:shadow-outline-gray [disabled]
