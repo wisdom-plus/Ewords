@@ -12,9 +12,10 @@ html
   body
     p.notice = notice
     p.alert = alert
-    main.bg-gray-100.dark:bg-gray-800.h-screen.overflow-hidden.relative
+    .bg-gray-100.dark:bg-gray-800.overflow-hidden.relative
       .flex.items-start.justify-between
         = render 'shared/sidebar'
-        .flex.flex-col.w-full.md:space-y-4.overflow-auto
+        .flex.flex-col.w-full.md:space-y-4
           = render 'shared/header'
-          = yield
+          main
+            = yield
