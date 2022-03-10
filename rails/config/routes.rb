@@ -63,13 +63,13 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users', to: 'devise/sessions#new'
   end
-  devise_for :users, :controllers => {
-    :confirmations => 'users/confirmations',
-    :registrations => 'users/registrations',
-    :sessions => 'users/sessions',
-    :passwords => 'users/passwords'
+  devise_for :users, controllers: {
+    confirmations: 'users/confirmations',
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    passwords: 'users/passwords'
   }
 
-  root to:'home#dashboard'
+  root to: 'home#dashboard'
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
