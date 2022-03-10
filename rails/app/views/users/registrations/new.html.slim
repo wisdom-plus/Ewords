@@ -1,45 +1,42 @@
-.flex.items-center.min-h-screen.p-6.bg-gray-50.dark:bg-gray-900
-  .flex-1.h-full.max-w-4xl.mx-auto.overflow-hidden.bg-white.rounded-lg.shadow-xl.dark:bg-gray-800
-    .flex.flex-col.overflow-y-auto.md:flex-row
-      .h-32.md:h-auto.md:w-1/2
-        = image_tag 'create_account',alt: 'Office',class: 'object-cover w-full h-full dark:hidden'
-        = image_tag 'create_account_dark',alt: 'Office',class: 'hidden object-cover w-full h-full dark:block'
-      .flex.items-center.justify-center.p-6.sm:p-12.md:w-1/2
-        =form_with model: @user, url: user_registration_path,class: 'w-full' do |f|
-          h1.mb-4.text-xl.font-semibold.text-gray-700.dark:text-gray-200
-            |  Create account
-          = f.label :name, class: 'block text-sm'
-            span.text-gray-700.dark:text-gray-400
-              | Name
-            = f.text_field :name,autofoucus: true,autocomplete:'name',placeholder: 'User Name', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
-          = f.label :email, class: 'block text-sm mt-4'
-            span.text-gray-700.dark:text-gray-400
-              | Email
-            = f.email_field :email,autofoucus: true,autocomplete:'email',placeholder: 'E-mail Address', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
-          = f.label :password, class: 'block text-sm mt-4'
-            span.text-gray-700.dark:text-gray-400
-              | Password
-            = f.password_field :password,autofoucus: true,autocomplete:'password',placeholder: 'Password', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
-          = f.label :password_confirmation, class: 'block text-sm mt-4'
-            span.text-gray-700.dark:text-gray-400
-              | Confirmation Password
-            = f.password_field :password_confirmation,autofoucus: true,autocomplete:'password_confirmation',placeholder: 'Password Confirmation', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
-          .flex.mt-6.text-sm
-            = f.label :policy, class: 'flex items-center dark:text-gray-400'
-              = f.check_box :policy, class: 'ckbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray'
-              span.ml-2
-                |  I agree to the
-                span.underline
-                  | privacy policy
-          = f.submit 'Create account',class: 'block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
-          hr.my-8
-          button.flex.items-center.justify-center.w-full.px-4.py-2.mt-4.text-sm.font-medium.leading-5.text-gray-700.transition-colors.duration-150.border.border-gray-300.rounded-lg.dark:text-gray-400.active:bg-transparent.hover:border-gray-500.focus:border-gray-500.active:text-gray-500.focus:outline-none.focus:shadow-outline-gray [disabled]
-            svg.w-4.h-4.mr-2[aria-hidden="true" viewbox="0 0 24 24" fill="currentColor"]
-              path[d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"]
-            |  Twitter(実装予定)
-          p.mt-4
-            = link_to 'Login',new_user_session_path, class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
-          p.mt-1
-            = link_to 'Forgot your password?',new_user_password_path, class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
-          p.mt-1
-            = link_to "Didn't receive confirmation mail?",new_user_confirmation_path,class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
+.h-32.md:h-auto.md:w-1/2
+  = image_tag 'create_account',alt: 'Office',class: 'object-cover w-full h-full dark:hidden'
+  = image_tag 'create_account_dark',alt: 'Office',class: 'hidden object-cover w-full h-full dark:block'
+.flex.items-center.justify-center.p-6.sm:p-12.md:w-1/2
+  =form_with model: @user, url: user_registration_path,class: 'w-full' do |f|
+    h1.mb-4.text-xl.font-semibold.text-gray-700.dark:text-gray-200
+      |  Create account
+    = f.label :name, class: 'block text-sm'
+      span.text-gray-700.dark:text-gray-400
+        | Name
+      = f.text_field :name,autofoucus: true,autocomplete:'name',placeholder: 'User Name', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
+    = f.label :email, class: 'block text-sm mt-4'
+      span.text-gray-700.dark:text-gray-400
+        | Email
+      = f.email_field :email,autofoucus: true,autocomplete:'email',placeholder: 'E-mail Address', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
+    = f.label :password, class: 'block text-sm mt-4'
+      span.text-gray-700.dark:text-gray-400
+        | Password
+      = f.password_field :password,autofoucus: true,autocomplete:'password',placeholder: 'Password', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
+    = f.label :password_confirmation, class: 'block text-sm mt-4'
+      span.text-gray-700.dark:text-gray-400
+        | Confirmation Password
+      = f.password_field :password_confirmation,autofoucus: true,autocomplete:'password_confirmation',placeholder: 'Password Confirmation', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
+    .flex.mt-6.text-sm
+      = f.label :policy, class: 'flex items-center dark:text-gray-400'
+        = f.check_box :policy, class: 'ckbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray'
+        span.ml-2
+          |  I agree to the
+          span.underline
+            | privacy policy
+    = f.submit 'Create account',class: 'block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
+    hr.my-8
+    button.flex.items-center.justify-center.w-full.px-4.py-2.mt-4.text-sm.font-medium.leading-5.text-gray-700.transition-colors.duration-150.border.border-gray-300.rounded-lg.dark:text-gray-400.active:bg-transparent.hover:border-gray-500.focus:border-gray-500.active:text-gray-500.focus:outline-none.focus:shadow-outline-gray [disabled]
+      svg.w-4.h-4.mr-2[aria-hidden="true" viewbox="0 0 24 24" fill="currentColor"]
+        path[d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"]
+      |  Twitter(実装予定)
+    p.mt-4
+      = link_to 'Login',new_user_session_path, class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
+    p.mt-1
+      = link_to 'Forgot your password?',new_user_password_path, class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
+    p.mt-1
+      = link_to "Didn't receive confirmation mail?",new_user_confirmation_path,class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
