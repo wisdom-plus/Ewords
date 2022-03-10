@@ -11,20 +11,33 @@ RSpec.describe "Sessions", type: :request do
   end
 
   describe "POST /sign_in" do
-    it 'リクエストが成功' do
-      post user_session_path,params: {user:{ email: user.email,password: user.password,remember_me: '0'}}, xhr: true
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to root_path
+    context 'success' do
+      it 'リクエストが成功' do
+        post user_session_path,params: {user:{ email: user.email,password: user.password,remember_me: '0'}}, xhr: true
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to root_path
+      end
     end
+    context 'failure' do
+      it 'リクエストに失敗(email)' do
+        post user_session_path,params: {user:{ email: 'miss@example.com',password: user.password,remember_me: '0'}}, xhr: true
+        expect(response).to have_http_status(401)
+      end
 
-    it 'リクエストに失敗(email)' do
-      post user_session_path,params: {user:{ email: 'miss@example.com',password: user.password,remember_me: '0'}}, xhr: true
-      expect(response).to have_http_status(401)
-    end
+      it 'リクエストに失敗(password間違い)' do
+        post user_session_path,params: {user:{ email: user.email,password: 'misspassword',remember_me: '0'}}, xhr: true
+        expect(response).to have_http_status(401)
+      end
 
-    it 'リクエストに失敗(password)' do
-      post user_session_path,params: {user:{ email: user.email,password: 'misspassword',remember_me: '0'}}, xhr: true
-      expect(response).to have_http_status(401)
+      it 'リクエストに失敗(password足りない)' do
+        post user_session_path,params: {user:{ email: user.email,password: 'miss',remember_me: '0'}}, xhr: true
+        expect(response).to have_http_status(401)
+      end
+
+      it 'リクエストに失敗(空白)' do
+        post user_session_path,params: {user:{ email: user.email,password: '        ',remember_me: '0'}}, xhr: true
+        expect(response).to have_http_status(401)
+      end
     end
   end
 end
