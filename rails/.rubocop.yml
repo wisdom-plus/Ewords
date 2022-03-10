@@ -64,6 +64,10 @@ Lint/StructNewOverride:
 
 Layout/LineLength:
   Max: 150
+  Exclude:
+    - '**/spec/**/*'
+    - 'config/routes.rb'
+    - 'config/initializers/*+'
 
 Metrics/AbcSize:
   Exclude:
