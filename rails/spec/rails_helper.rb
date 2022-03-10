@@ -62,7 +62,6 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  config.include FactoryBot::Syntax::Methods
 
   config.before(:each, type: :system) do
     driven_by :rack_test
@@ -74,6 +73,10 @@ RSpec.configure do |config|
     Capybara.server_port = 3000
     Capybara.app_host = "http://#{Capybara.server_host}:#{Capybara.server_port}"
   end
+
+  config.include FactoryBot::Syntax::Methods
+  config.include Warden::Test::Helpers
+  config.include Devise::Test::IntegrationHelpers, type: :request
 end
 
 Capybara.register_driver :remote_chrome do |app|
@@ -89,4 +92,5 @@ Capybara.register_driver :remote_chrome do |app|
     }
   )
   Capybara::Selenium::Driver.new(app, browser: :remote, url: url, desired_capabilities: caps)
+
 end
