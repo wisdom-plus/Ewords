@@ -32,4 +32,6 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :trackable, :timeoutable
+
+  validates :name,length: {minimum: 2}, presence: true
 end
