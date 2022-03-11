@@ -22,6 +22,7 @@ RSpec.describe "Sessions", type: :request do
         expect(response).to redirect_to root_path
       end
     end
+
     context 'failure' do
       it 'リクエストに失敗(email)' do
         post user_session_path,params: {user:{ email: 'miss@example.com',password: user.password,remember_me: '0'}}, xhr: true
