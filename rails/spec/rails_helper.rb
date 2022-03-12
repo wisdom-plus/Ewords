@@ -78,6 +78,7 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include TurboStreamSpecSupport, type: :request
+  config.include LoginHelper,type: :system
 end
 
 Capybara.register_driver :remote_chrome do |app|
