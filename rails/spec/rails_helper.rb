@@ -23,6 +23,22 @@ require 'capybara/rails'
 #
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
+Capybara.register_driver :remote_chrome do |app|
+  url = 'http://chrome:4444/wd/hub'
+  caps = ::Selenium::WebDriver::Remote::Capabilities.chrome(
+    'goog:chromeOptions' => {
+      'args' => [
+        'no-sandbox',
+        'headless',
+        'disable-gpu',
+        'window-size=1024,640'
+      ]
+    }
+  )
+  Capybara::Selenium::Driver.new(app, browser: :remote, url: url, capabilities: caps)
+end
+
+
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
 begin
@@ -68,10 +84,10 @@ RSpec.configure do |config|
   end
 
   config.before(:each, type: :system, js: true) do
-    driven_by :remote_chrome
     Capybara.server_host = IPSocket.getaddress(Socket.gethostname)
-    Capybara.server_port = 3000
-    Capybara.app_host = "http://#{Capybara.server_host}:#{Capybara.server_port}"
+    Capybara.server_port = 4444
+    Capybara.app_host = "http://web"
+    driven_by :remote_chrome
   end
 
   config.include FactoryBot::Syntax::Methods
@@ -79,19 +95,4 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include TurboStreamSpecSupport, type: :request
   config.include LoginHelper,type: :system
-end
-
-Capybara.register_driver :remote_chrome do |app|
-  url = 'http://chrome:4444/wd/hub'
-  caps = ::Selenium::WebDriver::Remote::Capabilities.chrome(
-    'goog:chromeOptions' => {
-      'args' => [
-        'no-sandbox',
-        'headless',
-        'disable-gpu',
-        'window-size=1024,640'
-      ]
-    }
-  )
-  Capybara::Selenium::Driver.new(app, browser: :remote, url: url, desired_capabilities: caps)
 end
