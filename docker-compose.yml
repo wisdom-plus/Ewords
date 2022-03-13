@@ -23,6 +23,8 @@ services:
     shm_size: 256m
     ports:
       - "4444:4444"
+    logging:
+      driver: none
 
 volumes:
   postgresql-data:
