@@ -50,12 +50,12 @@ RSpec.describe 'Passwords', type: :request do
       end
 
       it 'リクエストが成功' do
-        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'another_password', password_confirmation: 'another_password' } },xhr: true
+        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'another_password', password_confirmation: 'another_password' } }
         expect(response).to have_http_status(:found)
       end
 
       it 'リクエストが成功(パスワードが6文字)' do
-        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'passwo', password_confirmation: 'passwo' } },xhr: true
+        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'passwo', password_confirmation: 'passwo' } }
         expect(response).to have_http_status(:found)
       end
     end
