@@ -50,12 +50,12 @@ RSpec.describe 'Passwords', type: :request do
       end
 
       it 'リクエストが成功' do
-        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'another_password', password_confirmation: 'another_password' } }
+        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'another_password', password_confirmation: 'another_password' } },xhr: true
         expect(response).to have_http_status(:found)
       end
 
       it 'リクエストが成功(パスワードが6文字)' do
-        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'passwo', password_confirmation: 'passwo' } }
+        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'passwo', password_confirmation: 'passwo' } },xhr: true
         expect(response).to have_http_status(:found)
       end
     end
@@ -69,17 +69,17 @@ RSpec.describe 'Passwords', type: :request do
       end
 
       it 'リクエストが失敗(トークンが違う)' do
-        patch user_password_path, params: { user: { reset_password_token: 'another_token', password: 'another_password', password_confirmation: 'another_password' } }
+        patch user_password_path, params: { user: { reset_password_token: 'another_token', password: 'another_password', password_confirmation: 'another_password' } },xhr: true
         expect(response).to have_http_status(:ok)
       end
 
       it 'リクエストが失敗(パスワードが短い5文字)' do
-        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'passw', password_confirmation: 'passw' } }
+        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'passw', password_confirmation: 'passw' } },xhr: true
         expect(response).to have_http_status(:ok)
       end
 
       it 'リクエストが失敗(パスワードが一致しない)' do
-        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'another_password', password_confirmation: 'password' } }
+        patch user_password_path, params: { user: { reset_password_token: @raw, password: 'another_password', password_confirmation: 'password' } },xhr: true
         expect(response).to have_http_status(:ok)
       end
     end
