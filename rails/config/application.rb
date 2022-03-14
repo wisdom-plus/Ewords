@@ -41,10 +41,10 @@ module Ewords
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
     config.generators do |g|
       g.test_framework :rspec,
-        view_spec: false,
-        helper_spec: false,
-        model_spec: false,
-        routing_spec: false
+                       view_specs: false,
+                       helper_specs: false,
+                       model_specs: false,
+                       routing_specs: false
     end
   end
 end

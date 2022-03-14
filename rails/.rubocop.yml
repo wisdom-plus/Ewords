@@ -1,9 +1,7 @@
-inherit_from: .rubocop_todo.yml
-
 require:
-  - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-performance
 
 AllCops:
   TargetRubyVersion: 2.6
@@ -64,6 +62,10 @@ Lint/StructNewOverride:
 
 Layout/LineLength:
   Max: 150
+  Exclude:
+    - '**/spec/**/*'
+    - 'config/routes.rb'
+    - 'config/initializers/*+'
 
 Metrics/AbcSize:
   Exclude:

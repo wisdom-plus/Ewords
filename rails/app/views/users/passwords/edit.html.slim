@@ -1,0 +1,17 @@
+.h-32.md:h-auto.md:w-1/2
+  = image_tag 'password_edit.jpg', class: 'object-cover w-full h-full dark:hidden', alt:'Office'
+  = image_tag 'password_edit_dark.jpg', class: 'hidden object-cover w-full h-full dark:block', alt:'Office'
+.flex.items-center.justify-center.p-6.sm:p-12.md:w-1/2
+  = form_with model: @user, url:user_password_path,class: 'w-full',method: :put do |f|
+    = f.hidden_field :reset_password_token
+    h1.mb-4.text-xl.font-semibold.text-gray-700.dark:text-gray-200
+      |  Forgot password
+    = f.label :password, class: 'block text-sm mt-4'
+      span.text-gray-700.dark:text-gray-400
+        | Password
+      = f.password_field :password,autofoucus: true,autocomplete:'password',placeholder: 'Password', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
+    = f.label :password_confirmation, class: 'block text-sm mt-4'
+      span.text-gray-700.dark:text-gray-400
+        | Confirmation Password
+      = f.password_field :password_confirmation,autofoucus: true,autocomplete:'password_confirmation',placeholder: 'Password Confirmation', class: 'block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
+    = f.submit 'Recover password', class: 'block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
