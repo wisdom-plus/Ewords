@@ -10,7 +10,7 @@ RSpec.describe 'Users', type: :system do
     end
 
     context 'success' do
-      it 'ログインに成功(remember meなし)' do
+      it 'ログインに成功(Remember meなし)' do
         fill_in 'E-mail address', with: user.email
         fill_in 'Password', with: user.password
         click_button 'Log in'
@@ -18,9 +18,10 @@ RSpec.describe 'Users', type: :system do
         expect(page).to have_current_path root_path
       end
 
-      it 'ログインに成功' do
+      it 'ログインに成功(Remember meあり)' do
         fill_in 'E-mail address', with: user.email
         fill_in 'Password', with: user.password
+        check 'Remember me'
         click_button 'Log in'
         expect(page).to have_content 'ログインしました。'
         expect(page).to have_current_path root_path
