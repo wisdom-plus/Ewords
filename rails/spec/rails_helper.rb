@@ -38,7 +38,6 @@ Capybara.register_driver :remote_chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :remote, url: url, capabilities: caps)
 end
 
-
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
 begin
@@ -86,7 +85,7 @@ RSpec.configure do |config|
   config.before(:each, type: :system, js: true) do
     Capybara.server_host = IPSocket.getaddress(Socket.gethostname)
     Capybara.server_port = 4444
-    Capybara.app_host = "http://web"
+    Capybara.app_host = 'http://web'
     driven_by :remote_chrome
   end
 
@@ -94,5 +93,5 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include TurboStreamSpecSupport, type: :request
-  config.include LoginHelper,type: :system
+  config.include LoginHelper, type: :system
 end
