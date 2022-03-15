@@ -7,7 +7,7 @@ on:
       - docker-compose.yml
 
 jobs:
-  rspec:
+  rubocop:
     runs-on: ubuntu-20.04
     env:
       RAILS_ENV: test
