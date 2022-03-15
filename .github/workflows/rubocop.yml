@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-20.04
     services:
       database:
-        image: postgresql:14.1
+        image: postgres:14.1
         ports:
           - 5432:5432
         env:
