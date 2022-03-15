@@ -1,7 +1,6 @@
 test:
   adapter: postgresql
   encoding: unicode
-  collation: utf8_general_ci
   username: postgres
   password: password
   host: 127.0.0.1
