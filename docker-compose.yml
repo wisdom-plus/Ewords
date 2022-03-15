@@ -18,6 +18,8 @@ services:
       - postgresql-data:/var/lib/postgresql/data:delegated
     environment:
       POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
   chrome:
     image: selenium/standalone-chrome:latest
     shm_size: 256m
