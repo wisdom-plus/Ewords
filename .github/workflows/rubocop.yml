@@ -28,6 +28,7 @@ jobs:
       - name: SET up Ruby 3.1.1
         uses: ruby/setup-ruby@v1
         with:
+          ruby-version: 3.1.1
           bundler-cache: true
           working-directory: ./rails
       - name: Setup Database
