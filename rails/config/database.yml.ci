@@ -1,9 +1,9 @@
 test:
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   collation: utf8_general_ci
-  username: root
-  password: root
+  username: postgres
+  password: password
   host: 127.0.0.1
-  database: github_actions_for_rails_test
+  database: actions_test
   reconnect: false
