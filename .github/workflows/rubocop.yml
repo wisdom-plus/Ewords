@@ -9,6 +9,8 @@ on:
 jobs:
   rspec:
     runs-on: ubuntu-20.04
+    env:
+      RAILS_ENV: test
     services:
       database:
         image: postgres:14.1
