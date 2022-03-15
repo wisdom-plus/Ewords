@@ -1,0 +1,40 @@
+name: Rubocop
+on:
+  push:
+    paths-ignore:
+      - README.md
+      - Dockerfile
+      - docker-compose.yml
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-20.04
+    env:
+      RAILS_ENV: test
+    services:
+      database:
+        image: postgres:14.1
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_PASSWORD: password
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - uses: actions/checkout@v2
+      - name: SET up Ruby 3.1.1
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.1
+          bundler-cache: true
+          working-directory: ./rails
+      - name: Setup Database
+        run: |
+          cp config/database.yml.ci config/database.yml
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+        working-directory: ./rails
+      - name: run rubocop
+        run: bundle exec rubocop
+        working-directory: ./rails
