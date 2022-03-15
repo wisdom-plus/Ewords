@@ -68,6 +68,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw], require: false
   gem 'factory_bot_rails'
   gem 'pry-byebug', '~> 3.9'
+  gem 'rails_best_practices'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers', '~> 5.0', require: false
