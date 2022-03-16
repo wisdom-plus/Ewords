@@ -3,6 +3,6 @@ test:
   encoding: unicode
   username: postgres
   password: password
-  host: 127.0.0.1
+  host: database
   database: actions_test
   reconnect: false
