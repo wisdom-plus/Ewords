@@ -40,7 +40,7 @@ Capybara.register_driver :remote_chrome do |app|
 end
 
 Capybara.configure do |config|
-  config.always_include_port = false
+  config.always_include_port = true
 end
 
 # Checks for pending migrations and applies them before tests are run.
