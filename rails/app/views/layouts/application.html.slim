@@ -10,11 +10,11 @@ html
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = javascript_importmap_tags
   body
-    = render 'shared/flash_message'
     .bg-gray-100.dark:bg-gray-800.overflow-hidden.relative
       .flex.items-start.justify-between
         = render 'shared/sidebar'
         .flex.flex-col.w-full.md:space-y-4
+          = render 'shared/flash_message'
           = render 'shared/header'
           main
             = yield
