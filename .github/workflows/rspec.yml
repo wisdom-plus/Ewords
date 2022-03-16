@@ -27,11 +27,12 @@ jobs:
           - 4444:4444
     container:
       image: tomoron/ewords:latest
+      options: --shm-size 256m
     steps:
       - uses: actions/checkout@v2
       - name: Setup Database
         run: |
-          cp config/database.yml.ci config/database.yml
+          cp config/database.yml.ci2 config/database.yml
           bundle exec rails db:create
           bundle exec rails db:migrate
         working-directory: ./rails
