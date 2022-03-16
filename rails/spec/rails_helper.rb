@@ -24,7 +24,7 @@ require 'capybara/rails'
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 Capybara.register_driver :remote_chrome do |app|
-  url = 'http://chrome/wd/hub'
+  url = 'http://chrome:4444/wd/hub'
   caps = ::Selenium::WebDriver::Remote::Capabilities.chrome(
     'goog:chromeOptions' => {
       'args' => [
@@ -39,6 +39,9 @@ Capybara.register_driver :remote_chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :remote, url: url, capabilities: caps)
 end
 
+Capybara.configure do |config|
+  config.always_include_port = false
+end
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
