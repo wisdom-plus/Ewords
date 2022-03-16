@@ -38,6 +38,10 @@ Capybara.register_driver :remote_chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :remote, url: url, capabilities: caps)
 end
 
+Capybara.configure do |config|
+  config.always_include_port = true
+end
+
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
 begin
