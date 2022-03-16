@@ -27,7 +27,7 @@ jobs:
           - 4444:4444
     container:
       image: tomoron/ewords:latest
-      options: --shm-size 256m
+      options: --shm-size 256m --name web
       ports:
         - 3000:3000
     steps:
