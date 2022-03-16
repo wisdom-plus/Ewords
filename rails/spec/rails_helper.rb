@@ -31,6 +31,7 @@ Capybara.register_driver :remote_chrome do |app|
         'no-sandbox',
         'headless',
         'disable-gpu',
+        'disable-dev-shm-usage',
         'window-size=1024,640'
       ]
     }
