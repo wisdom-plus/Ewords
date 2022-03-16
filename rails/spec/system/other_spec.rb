@@ -5,11 +5,7 @@ RSpec.describe 'Other', type: :system, js: true do
 
   describe 'Flash message' do
     it 'フラッシュメッセージが表示される(notice)' do
-      user.confirm
-      visit new_user_session_url
-      fill_in 'E-mail address', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Log in'
+      login(user)
       expect(page).to have_selector '#flash-message-notice', text: 'ログインしました。'
     end
 
