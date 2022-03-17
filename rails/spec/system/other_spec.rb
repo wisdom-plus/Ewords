@@ -29,5 +29,18 @@ RSpec.describe 'Other', type: :system, js: true do
       find('.flash-delete-button').click
       expect(page).to have_no_selector '#flash-message-notice', text: 'ログアウトしました。'
     end
+
+    it 'ダークモードに変更する' do
+      visit root_path
+      find('#toggle_theme_button').click
+      expect(page).to have_css '.dark'
+    end
+
+    it 'ダークモードからライトモードに変更する' do
+      visit root_path
+      find('#toggle_theme_button').click
+      find('#toggle_theme_button').click
+      expect(page).to have_no_css '.dark'
+    end
   end
 end
