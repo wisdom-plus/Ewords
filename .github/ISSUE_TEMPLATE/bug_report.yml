@@ -2,6 +2,8 @@ name: バグレポート
 description: バグのためのissueを立てるためのテンプレートです
 labels:
   - bug
+assignees:
+  - tomoron
 title: 'fix:'
 body:
   - type: markdown
