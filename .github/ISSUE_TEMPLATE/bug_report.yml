@@ -15,6 +15,7 @@ body:
         - 直前の変更した場所などを書く
 
   - type: textarea
+    id: error-message
     attributes:
       label: エラーメッセージ
       description: 発生したエラーメッセージが貼り付けてください
@@ -23,11 +24,13 @@ body:
       required: true
 
   - type: textarea
+    id: code
     attributes:
       label: エラーが出ているコード
       render: Ruby
 
   - type: textarea
+    id: description
     attributes:
       label: エラーが発生している理由(予想)
     validations:
