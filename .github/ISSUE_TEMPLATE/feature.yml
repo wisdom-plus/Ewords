@@ -9,7 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        # 新機能を追加する時
+        # 新機能を実装するためのissueです
 
         ## ルール
         - どんな機能を追加するか書いてください
