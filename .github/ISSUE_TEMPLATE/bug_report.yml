@@ -1,0 +1,34 @@
+name: バグレポート
+description: バグのためのissueを立てるためのテンプレートです
+labels:
+  - bug
+title: 'fix:'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # バグが発生し解消に時間がかかる、または先回しにしても問題がない時にissueを立ててください。
+
+        ## ルール
+        - バグが発生している箇所のコードを貼り付ける
+        - コンソールなどで出ているエラーメッセージを貼り付ける
+        - 直前の変更した場所などを書く
+
+  - type: textarea
+    attributes:
+      label: エラーメッセージ
+      description: 発生したエラーメッセージが貼り付けてください
+      render: Alpine Abuild
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: エラーが出ているコード
+      render: Ruby
+
+  - type: textarea
+    attributes:
+      label: エラーが発生している理由(予想)
+    validations:
+      required: true
