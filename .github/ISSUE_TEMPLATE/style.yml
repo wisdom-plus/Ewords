@@ -1,24 +1,24 @@
 name: スタイル変更
 description: スタイル変更のためのテンプレートです
 labels:
-  - style
+  - refactoring
 assignees:
   - tomoron
-title: 'style:'
+title: 'ref:'
 body:
   - type: markdown
     attributes:
       value: |
-        # スタイルを変更するためのissueです
+        # リファクタリングするためのissueです
 
         ## ルール
-        - どのようにUI/UXを変更するかを書いてください
-        - 使用するライブラリ名を書くこと
-        - 参考サイトがあるなら書くこと
+        - 機能が変わらないようにリファクタリングを行なってください
+        - 動作が変わる場合は、必ずテストも変更するようにしてください
+
 
   - type: textarea
     id: description
     attributes:
-      label: どのようにスタイルを変更しようとしているか
+      label: どの箇所をリファクタリングしようとしているのか
     validations:
       required: true

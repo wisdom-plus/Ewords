@@ -1,0 +1,24 @@
+name: リファクタリング
+description: リファクタリングのためのテンプレートです
+labels:
+  - style
+assignees:
+  - tomoron
+title: 'style:'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # スタイルを変更するためのissueです
+
+        ## ルール
+        - どのようにUI/UXを変更するかを書いてください
+        - 使用するライブラリ名を書くこと
+        - 参考サイトがあるなら書くこと
+
+  - type: textarea
+    id: description
+    attributes:
+      label: どのようにスタイルを変更しようとしているか
+    validations:
+      required: true
