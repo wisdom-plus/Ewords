@@ -1,0 +1,24 @@
+name: スタイル変更
+description: スタイル変更のためのテンプレートです
+labels:
+  - refactoring
+assignees:
+  - tomoron
+title: 'ref:'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # リファクタリングするためのissueです
+
+        ## ルール
+        - 機能が変わらないようにリファクタリングを行なってください
+        - 動作が変わる場合は、必ずテストも変更するようにしてください
+
+
+  - type: textarea
+    id: description
+    attributes:
+      label: どの箇所をリファクタリングしようとしているのか
+    validations:
+      required: true
