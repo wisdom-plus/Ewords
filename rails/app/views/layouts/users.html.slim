@@ -10,15 +10,16 @@ html
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = javascript_importmap_tags
   body [data-controller='theme' data-theme-target='body']
-    = render 'shared/flash_message'
-    main
-      .flex.items-center.min-h-screen.p-6.bg-gray-50.dark:bg-gray-900.relative
-        .flex-1.h-full.max-w-4xl.mx-auto.overflow-hidden.bg-white.rounded-lg.shadow-xl.dark:bg-gray-800
-          .flex.flex-col.overflow-y-auto.md:flex-row
-            = yield
-        = link_to root_path,class: 'flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-full active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple absolute bottom-4 left-4' do
-          svg.h-8.w-8.text-white  [viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"]
-            path [stroke="none" d="M0 0h24v24H0z"]
-            polyline [points="5 12 3 12 12 3 21 12 19 12"]
-            path [d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"]
-            path [d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"]
+    =turbo_frame_tag 'main' do
+      = render 'shared/flash_message'
+      main
+        .flex.items-center.min-h-screen.p-6.bg-gray-50.dark:bg-gray-900.relative
+          .flex-1.h-full.max-w-4xl.mx-auto.overflow-hidden.bg-white.rounded-lg.shadow-xl.dark:bg-gray-800
+            .flex.flex-col.overflow-y-auto.md:flex-row
+              = yield
+          = link_to root_path,class: 'flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-full active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple absolute bottom-4 left-4' do
+            svg.h-8.w-8.text-white  [viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"]
+              path [stroke="none" d="M0 0h24v24H0z"]
+              polyline [points="5 12 3 12 12 3 21 12 19 12"]
+              path [d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"]
+              path [d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"]
