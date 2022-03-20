@@ -15,7 +15,7 @@ html
       main
         .flex.items-center.min-h-screen.p-6.bg-gray-50.dark:bg-gray-900.relative
           .flex-1.h-full.max-w-4xl.mx-auto.overflow-hidden.bg-white.rounded-lg.shadow-xl.dark:bg-gray-800
-            .flex.flex-col.overflow-y-auto.md:flex-row
+            = turbo_frame_tag 'users',class: 'flex flex-col overflow-y-auto md:flex-row' do
               = yield
           = link_to root_path,class: 'flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-full active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple absolute bottom-4 left-4' do
             svg.h-8.w-8.text-white  [viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"]
