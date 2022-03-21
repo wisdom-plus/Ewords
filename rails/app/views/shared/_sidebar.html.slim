@@ -12,7 +12,7 @@
           span.mx-2.text-sm.font-normal
             |  Dashboard
     - if user_signed_in?
-      = link_to destroy_user_session_path,method: :delete, data: {turbo_method: :delete},class: 'w-full text-gray-400 flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start space-y-2 hover:text-gray-800 border-l-4 border-transparent' do
+      = link_to destroy_user_session_path,method: :delete, data: {turbo_method: :delete,turbo_frame: "_top"},class: 'w-full text-gray-400 flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start space-y-2 hover:text-gray-800 border-l-4 border-transparent' do
         span.text-left
           svg.h-5.w-5  [width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"]
             path [stroke="none" d="M0 0h24v24H0z"]
@@ -21,7 +21,6 @@
         span.mx-4.text-sm.font-normal
           | ログアウト
     - else
-      / ターボを使う予定
       = link_to new_user_session_path,class: 'w-full text-gray-400 flex items-center pl-6 p-3 my-4 transition-colors duration-200 justify-start hover:text-gray-800 border-l-4 border-transparent' do
         span.text-left
           svg.h-5.w-5 [width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"]
