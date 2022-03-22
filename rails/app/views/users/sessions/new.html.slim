@@ -7,7 +7,7 @@
           .h-32.md:h-auto.md:w-1/2
             = image_tag 'login_office.jpg', class: 'object-cover w-full h-full dark:hidden', alt:'Office'
             = image_tag 'login_office_dark.jpg', class: 'hidden object-cover w-full h-full dark:block', alt:'Office'
-          .flex.items-center.justify-center.p-6.sm:p-12.md:w-1/2
+          .flex.items-center.justify-center.p-6.sm:p-12.md:w-4/6
             = form_with model: @user, url: user_session_path,class:'w-full' do |f|
               h1.mb-4.text-xl.font-semibold.text-gray-700.dark:text-gray-200
                 |  Login
@@ -24,6 +24,7 @@
                   = f.check_box :remember_me, class: 'ckbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray'
                   span.ml-2
                     |  Remember me
+              = render 'users/shared/error_messages', resource: resource
               = f.submit 'Log in',onclick: 'this.form.submit()',class: 'block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
               hr.my-8
               button.flex.items-center.justify-center.w-full.px-4.py-2.mt-4.text-sm.font-medium.leading-5.text-gray-700.transition-colors.duration-150.border.border-gray-300.rounded-lg.dark:text-gray-400.active:bg-transparent.hover:border-gray-500.focus:border-gray-500.active:text-gray-500.focus:outline-none.focus:shadow-outline-gray [disabled]
