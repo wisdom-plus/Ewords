@@ -27,6 +27,7 @@ RUN apk  --no-cache add linux-headers\
                         build-base \
                         gcompat &&\
     apk add --virtual build-dependencies --no-cache curl-dev &&\
+    bundle config set --local path /usr/local/bundle &&\
     bundle install -j4 &&\
     apk del build-dependencies
 
