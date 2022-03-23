@@ -48,6 +48,7 @@ RSpec.describe 'Users', type: :system do
         fill_in 'Password Confirmation', with: 'password'
         click_button 'Create account'
         expect(page).to have_current_path user_registration_path
+        expect(page).to have_content 'ユーザー名は2文字以上で入力してください'
       end
 
       it 'ユーザー名が空白' do
@@ -58,6 +59,7 @@ RSpec.describe 'Users', type: :system do
         fill_in 'Password Confirmation', with: 'password'
         click_button 'Create account'
         expect(page).to have_current_path user_registration_path
+        expect(page).to have_content 'ユーザー名は2文字以上で入力してください'
       end
 
       it 'ユーザー名がスペース' do
@@ -68,6 +70,7 @@ RSpec.describe 'Users', type: :system do
         fill_in 'Password Confirmation', with: 'password'
         click_button 'Create account'
         expect(page).to have_current_path user_registration_path
+        expect(page).to have_content 'ユーザー名を入力してください'
       end
 
       it 'メールアドレスが空白' do
@@ -78,6 +81,7 @@ RSpec.describe 'Users', type: :system do
         fill_in 'Password Confirmation', with: 'password'
         click_button 'Create account'
         expect(page).to have_current_path user_registration_path
+        expect(page).to have_content 'Eメールを入力してください'
       end
 
       it 'メールアドレスがスペース' do
@@ -88,6 +92,7 @@ RSpec.describe 'Users', type: :system do
         fill_in 'Password Confirmation', with: 'password'
         click_button 'Create account'
         expect(page).to have_current_path user_registration_path
+        expect(page).to have_content 'Eメールを入力してください'
       end
 
       it 'パスワードが5文字' do
@@ -98,6 +103,7 @@ RSpec.describe 'Users', type: :system do
         fill_in 'Password Confirmation', with: 'passw'
         click_button 'Create account'
         expect(page).to have_current_path user_registration_path
+        expect(page).to have_content 'パスワードは6文字以上で入力してください'
       end
 
       it 'パスワードが一致しない' do
@@ -108,6 +114,7 @@ RSpec.describe 'Users', type: :system do
         fill_in 'Password Confirmation', with: 'anotherpassword'
         click_button 'Create account'
         expect(page).to have_current_path user_registration_path
+        expect(page).to have_content 'パスワード（確認用）とパスワードの入力が一致しません'
       end
     end
   end
