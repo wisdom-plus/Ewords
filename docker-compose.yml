@@ -5,6 +5,7 @@ services:
     build: ./rails
     volumes:
       - ./rails:/Ewords:dekegated
+      - bundle:/user/local/bundle
     ports:
       - "3000:3000"
     tty: true
@@ -31,3 +32,4 @@ services:
 volumes:
   postgresql-data:
     driver: local
+  bundle:
