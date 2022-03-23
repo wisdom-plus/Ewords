@@ -86,6 +86,7 @@ RSpec.describe 'Users', type: :system do
         fill_in 'Password Confirmation', with: 'newpa'
         click_button 'Recover password'
         expect(page).to have_current_path user_password_path
+        expect(page).to have_content 'パスワードは6文字以上で入力してください'
       end
 
       it 'パスワードが一致しない' do
@@ -94,6 +95,7 @@ RSpec.describe 'Users', type: :system do
         fill_in 'Password Confirmation', with: 'anotherpassword'
         click_button 'Recover password'
         expect(page).to have_current_path user_password_path
+        expect(page).to have_content 'パスワード（確認用）とパスワードの入力が一致しません'
       end
     end
   end
