@@ -19,10 +19,10 @@
               = f.submit 'Recover password', class: 'block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
               hr.my-8
               p.mt-4
-                = link_to 'Login',new_user_session_path, class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
+                = link_to 'Login',new_user_session_path,data:{turbo_action: 'replace'}, class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
               p.mt-1
-                = link_to 'Create account', new_user_registration_path,class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
+                = link_to 'Create account', new_user_registration_path,data:{turbo_action: 'replace'},class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
               p.mt-1
-                = link_to "Didn't receive confirmation mail?",new_user_confirmation_path,class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
+                = link_to "Didn't receive confirmation mail?",new_user_confirmation_path,data:{turbo_action: 'replace'},class: 'text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline'
 
       = render 'shared/home_button'
