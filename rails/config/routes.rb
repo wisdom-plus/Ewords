@@ -20,6 +20,8 @@
 #                        user_confirmation GET    /users/confirmation(.:format)                                                                     users/confirmations#show
 #                                          POST   /users/confirmation(.:format)                                                                     users/confirmations#create
 #                                dashboard GET    /dashboard(.:format)                                                                              home#dashboard
+#                                   policy GET    /policy(.:format)                                                                                 home#policy
+#                           private_policy GET    /private_policy(.:format)                                                                         home#private_policy
 #                        letter_opener_web        /letter_opener                                                                                    LetterOpenerWeb::Engine
 #         turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede
 #         turbo_resume_historical_location GET    /resume_historical_location(.:format)                                                             turbo/native/navigation#resume
