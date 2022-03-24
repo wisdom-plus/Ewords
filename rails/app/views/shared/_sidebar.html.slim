@@ -21,7 +21,7 @@ aside.h-screen.hidden.lg:block.shadow-lg.w-64.overflow-y-auto.z-20.flex-shrink-0
         span.mx-4.text-sm.font-normal
           | ログアウト
     - else
-      = link_to new_user_session_path,class: 'w-full text-gray-400 flex items-center pl-6 p-3 my-4 transition-colors duration-200 justify-start hover:text-gray-800 border-l-4 border-transparent' do
+      = link_to new_user_session_path,data:{turbo_action: 'replace'},class: 'w-full text-gray-400 flex items-center pl-6 p-3 my-4 transition-colors duration-200 justify-start hover:text-gray-800 border-l-4 border-transparent' do
         span.text-left
           svg.h-5.w-5 [width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"]
             path [stroke="none" d="M0 0h24v24H0z"]
