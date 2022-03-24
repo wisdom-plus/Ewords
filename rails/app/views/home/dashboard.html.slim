@@ -1,5 +1,5 @@
 = turbo_frame_tag 'body' do
-  .bg-gray-100.dark:bg-gray-800.flex
+  .bg-gray-100.dark:bg-gray-800.flex [data-scroll-target='home' data-controller='scroll']
     = render 'shared/sidebar'
     .flex.flex-col.flex-1.w-full.md:space-y-4
       = render 'shared/flash_message'
