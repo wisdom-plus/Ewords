@@ -14,14 +14,14 @@ header.w-full.h-16.z-40.flex.items-center.justify-between class ='!mt-0'
           path [stroke="none" d="M0 0h24v24H0z"]
           path [d="M16.2 4a9.03 9.03 0 1 0 3.9 12a6.5 6.5 0 1 1 -3.9 -12"]
       div.relative.text-left data-controller="dropdown"
-        button.flex.p-2.items-center.rounded-full.text-gray-400.hover:text-gray-700.bg-white.shadow.text-md [data-action="dropdown#toggle click@window->dropdown#hide"]
+        button.flex.p-2.items-center.rounded-full.text-gray-400.hover:text-gray-700.bg-white.shadow.text-md.setting_button [data-action="dropdown#toggle click@window->dropdown#hide"]
           svg.h-6.w-6.text-gray-500[viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"]
             circle [cx="12" cy="12" r="3"]
             path [d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"]
           .transition.transform.origin-top-right.absolute.-left-24.top-8.mt-2.w-56.rounded-md.shadow-lg.bg-white.ring-1.ring-black.ring-opacity-5.focus:outline-none.dark:bg-gray-600[data-dropdown-target="menu" data-transition-enter-from="opacity-0 scale-95" data-transition-enter-to="opacity-100 scale-100" data-transition-leave-from="opacity-100 scale-100" data-transition-leave-to="opacity-0 scale-95"]
             .py-1
-              = link_to '利用規約', policy_path,class:"text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-sm dark:text-white dark:hover:bg-gray-500"
-              = link_to 'プライベートポリシー', private_policy_path,class: 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-sm dark:text-white dark:hover:bg-gray-500'
+              = link_to '利用規約', policy_path,data:{turbo_action: 'replace'},class:"text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-sm dark:text-white dark:hover:bg-gray-500 policy_link"
+              = link_to 'プライベートポリシー', private_policy_path,data:{turbo_action: 'replace'},class: 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 block px-4 py-2 text-sm dark:text-white dark:hover:bg-gray-500 private_link'
       button.flex.p-2.items-center.rounded-full.bg-white.shadow.text-gray-400.hover:text-gray-700.text-md
         svg[width="20" height="20" fill="currentColor" viewbox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"]
           path[d="M912 1696q0-16-16-16-59 0-101.5-42.5t-42.5-101.5q0-16-16-16t-16 16q0 73 51.5 124.5t124.5 51.5q16 0 16-16zm816-288q0 52-38 90t-90 38h-448q0 106-75 181t-181 75-181-75-75-181h-448q-52 0-90-38t-38-90q50-42 91-88t85-119.5 74.5-158.5 50-206 19.5-260q0-152 117-282.5t307-158.5q-8-19-8-39 0-40 28-68t68-28 68 28 28 68q0 20-8 39 190 28 307 158.5t117 282.5q0 139 19.5 260t50 206 74.5 158.5 85 119.5 91 88z"]
