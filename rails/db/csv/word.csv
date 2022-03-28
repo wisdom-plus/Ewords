@@ -1,6 +1,6 @@
 word,kind,reading,level
 accept,動詞,受諾する、受け入れる,basic
-access,動詞∕名詞,アクセスする、利用する、入手する∕アクセス,basic
+access,動詞,アクセスする、利用する、入手する∕アクセス,basic
 account,名詞,アカウント、口座,basic
 algorithm,名詞,アルゴリズム,basic
 allow,動詞,可能にする、許可する,basic
@@ -18,7 +18,7 @@ backup,名詞,バックアップ,basic
 based,形容詞,ベースの、〜に基づく,basic
 bit,名詞,ビット,basic
 blank,形容詞,空白の,basic
-block,名詞∕動詞,ブロック∕ブロックする,basic
+block,名詞,ブロック∕ブロックする,basic
 boolean,形容詞,ブールの,basic
 branch,名詞,ブランチ、分岐,basic
 browser,名詞,ブラウザー,basic
@@ -41,7 +41,7 @@ code,名詞,コード,basic
 collection,名詞,コレクション、収集,basic
 column,名詞,列、カラム,basic
 command,名詞,コマンド、命令,basic
-comment,名詞∕動詞,コメント∕コメントする,basic
+comment,名詞,コメント∕コメントする,basic
 commit,動詞,コミットする、(処理などを)確定する,basic
 communication,名詞,通信、コミュニケーション,basic
 component,名詞,コンポーネント、部品,basic
@@ -50,7 +50,7 @@ configuration,名詞,構成,basic
 connect,動詞,接続する,basic
 connection,名詞,接続,basic
 console,名詞,コンソール,basic
-constant,名詞∕形容詞,定数∕一定定値∕デフォルトで〜になる,basic
+constant,名詞,定数∕一定定値∕デフォルトで〜になる,basic
 define,動詞,定義する,basic
 delete,動詞,削除する,basic
 destroy,動詞,破棄する,basic
@@ -61,7 +61,7 @@ device,名詞,機器、デバイス,basic
 dialog,名詞,ダイアログ,basic
 directory,名詞,ディレクトリー,basic
 disk,名詞,ディスク,basic
-document,名詞∕動詞,ドキュメント、文書∕(文書で)記録する、詳しく記載する,basic
+document,名詞,ドキュメント、文書∕(文書で)記録する、詳しく記載する,basic
 documentation,名詞,ドキュメント、資料,basic
 domain,名詞,ドメイン,basic
 download,動詞,ダウンロードする,basic
@@ -70,14 +70,14 @@ drop-down,形容詞,ドロップダウン,basic
 feature,名詞,機能、特徴,basic
 field,名詞,フィールド,basic
 file,名詞,ファイル,basic
-filter,名詞∕動詞,フィルター∕絞り込む,basic
+filter,名詞,フィルター∕絞り込む,basic
 fix,動詞,修正する、解決する,basic
 flag,名詞,フラグ,basic
 folder,名詞,フォルダー,basic
-following,形容詞∕名詞,次に述べる∕次の項目,basic
+following,形容詞,次に述べる∕次の項目,basic
 font,名詞,フォント,basic
 force,動詞,強制する,basic
-format,名詞∕動詞,フォーマット、書式、形式∕初期化する、書式設定する,basic
+format,名詞,フォーマット、書式、形式∕初期化する、書式設定する,basic
 function,名詞,機能、関数,basic
 general,形容詞,全般の、一般の,basic
 generate,動詞,生成する,basic
@@ -87,16 +87,16 @@ guide,名詞,ガイド,basic
 hardware,名詞,ハードウェア,basic
 height,名詞,高さ,basic
 hide,動詞,隠す、非表示にする,basic
-highlight,名詞∕動詞,ハイライト∕強調表示する,basic
+highlight,名詞,ハイライト∕強調表示する,basic
 host,名詞,ホスト,basic
 icon,名詞,アイコン,basic
 ignore,動詞,無視する,basic
 image,名詞,画像、イメージ,basic
-import,名詞∕動詞,インポート∕インポートする,basic
+import,名詞,インポート∕インポートする,basic
 including,前置詞,〜を含めて,basic
 index,名詞,インデックス、索引、添字,basic
 indicate,動詞,示す,basic
-input,名詞∕動詞,入力∕入力する,basic
+input,名詞,入力∕入力する,basic
 install,動詞,インストールする,basic
 installer,名詞,インストーラー,basic
 instance,名詞,インスタンス、実例,basic
@@ -107,11 +107,11 @@ container,名詞,コンテナー,basic
 content,名詞,内容、コンテンツ,basic
 context,名詞,コンテキスト、文脈,basic
 continue,動詞,続行する,basic
-control,名詞∕動詞,制御、コントロール∕制御する,basic
+control,名詞,制御、コントロール∕制御する,basic
 cookie,名詞,クッキー,basic
-core,名詞∕形容詞,コア∕最重要の,basic
+core,名詞,コア∕最重要の,basic
 correctly,副詞,正しく、正常に,basic
-count,動詞∕名詞,数える∕回数、数,basic
+count,動詞,数える∕回数、数,basic
 current,形容詞,現在の,basic
 cursor,名詞,カーソル,basic
 custom,形容詞,カスタムの、ユーザー設定の,basic
@@ -120,8 +120,8 @@ damage,名詞,損害、ダメージ,basic
 dashboard,名詞,ダッシュボード,basic
 data,名詞,データ,basic
 database,名詞,データベース,basic
-debug,動詞∕名詞,デバッグする∕デバッグ,basic
-default,名詞∕動詞,デフォルト、既,basic
+debug,動詞,デバッグする∕デバッグ,basic
+default,名詞,デフォルト、既,basic
 edit,動詞,編集する,basic
 editor,名詞,エディター,basic
 element,名詞,要素,basic
@@ -129,7 +129,7 @@ empty,形容詞,空の,basic
 enter,動詞,入力する,basic
 entry,名詞,エントリー、入力,basic
 environment,名詞,環境,basic
-equal,形容詞∕動詞,等しい∕〜に等しい,basic
+equal,形容詞,等しい∕〜に等しい,basic
 error,名詞,エラー,basic
 except,前置詞,〜を除く,basic
 exception,名詞,例外,basic
@@ -137,8 +137,8 @@ exist,動詞,存在する,basic
 exit,動詞,終了する,basic
 expand,動詞,拡大する、展開する,basic
 expected,形容詞,期待された,basic
-export,名詞∕動詞,エクスポート∕エクスポートする,basic
-express,動詞∕形容詞,表現する∕明示された,basic
+export,名詞,エクスポート∕エクスポートする,basic
+express,動詞,表現する∕明示された,basic
 expression,名詞,表現、式,basic
 fail,動詞,失敗する,basic
 feature,名詞,機能、特徴,basic
@@ -723,7 +723,7 @@ test,名詞,テスト／テストする,primer
 traffic,名詞,トラフィック、通信（量）,primer
 tree,名詞,木、ツリー,primer
 true,形容詞,正しい、真の,primer
-use,動詞／名詞,使う／使用,primer
+use,動詞,使う／使用,primer
 useful,形容詞,便利な,primer
 user,名詞,ユーザー,primer
 visit,動詞,訪問する、アクセスする,primer
@@ -803,33 +803,33 @@ utils,略語,utilities（ユーティリティー）の略,abbreviation
 val,略語,valueの略,abbreviation
 var,略語,variableの略,abbreviation
 vars,略語,variablesの略,abbreviation
-API,頭文字,Application Programming Interfaceのこと,inital
-CI,頭文字,Continuous Integrationのこと,inital
-CLI,頭文字,Command Line Interfaceのこと,inital
-CPU,頭文字,Central Processing Unitのこと,inital
-CSS,頭文字,Cascading Style Sheetのこと,inital
-DNS,頭文字,Domain Name Systemのこと,inital
-DOM,頭文字,Document Object Modelのこと,inital
-HTML,頭文字,HyperText Markup Languageのこと,inital
-HTTP,頭文字,HyperText Transfer Protocolのこと,inital
-HTTPS,頭文字,HyperText Transfer Protocol Secureのこと,inital
-IDE,頭文字,Integrated Development Environmentのこと,inital
-IE,頭文字,Internet Explorerのこと,inital
-IO,頭文字,Input/Outputのこと,inital
-IP,頭文字,Internet Protocolのこと,inital
-JSON,頭文字,JavaScript Object Notationのこと,inital
-NFC,頭文字,Near Field Communicationのこと,inital
-OS,頭文字,Operating Systemのこと,inital
-RE,頭文字,Regular Expressionのこと,inital
-RGB,頭文字,Red Green Blueのこと,inital
-SDK,頭文字,Software Development Kitのこと,inital
-SQL,頭文字,Structured Query Languageのこと,inital
-SSH,頭文字,Secure SHellのこと,inital
-SSL,頭文字,Secure Sockets Layerのこと,inital
-UI,頭文字,User Interfaceのこと,inital
-URI,頭文字,Uniform Resource Identifierのこと,inital
-URL,頭文字,Uniform Resource Locatorのこと,inital
-VM,頭文字,Virtual Machineのこと,inital
-WIP,頭文字,Work In Progress（作業中）のこと,inital
-WWW,頭文字,World Wide Webのこと,inital
-XML,頭文字,eXtensible Markup Languageのこと,inital
+API,頭文字,Application Programming Interfaceのこと,initial
+CI,頭文字,Continuous Integrationのこと,initial
+CLI,頭文字,Command Line Interfaceのこと,initial
+CPU,頭文字,Central Processing Unitのこと,initial
+CSS,頭文字,Cascading Style Sheetのこと,initial
+DNS,頭文字,Domain Name Systemのこと,initial
+DOM,頭文字,Document Object Modelのこと,initial
+HTML,頭文字,HyperText Markup Languageのこと,initial
+HTTP,頭文字,HyperText Transfer Protocolのこと,initial
+HTTPS,頭文字,HyperText Transfer Protocol Secureのこと,initial
+IDE,頭文字,Integrated Development Environmentのこと,initial
+IE,頭文字,Internet Explorerのこと,initial
+IO,頭文字,Input/Outputのこと,initial
+IP,頭文字,Internet Protocolのこと,initial
+JSON,頭文字,JavaScript Object Notationのこと,initial
+NFC,頭文字,Near Field Communicationのこと,initial
+OS,頭文字,Operating Systemのこと,initial
+RE,頭文字,Regular Expressionのこと,initial
+RGB,頭文字,Red Green Blueのこと,initial
+SDK,頭文字,Software Development Kitのこと,initial
+SQL,頭文字,Structured Query Languageのこと,initial
+SSH,頭文字,Secure SHellのこと,initial
+SSL,頭文字,Secure Sockets Layerのこと,initial
+UI,頭文字,User Interfaceのこと,initial
+URI,頭文字,Uniform Resource Identifierのこと,initial
+URL,頭文字,Uniform Resource Locatorのこと,initial
+VM,頭文字,Virtual Machineのこと,initial
+WIP,頭文字,Work In Progress（作業中）のこと,initial
+WWW,頭文字,World Wide Webのこと,initial
+XML,頭文字,eXtensible Markup Languageのこと,initial
