@@ -12,9 +12,9 @@
 #
 FactoryBot.define do
   factory :word do
-    word {'test'}
-    reading {'テスト'}
-    level {1}
-    kind {1}
+    word { 'test' }
+    reading { 'テスト' }
+    level { 1 }
+    kind { 1 }
   end
 end
