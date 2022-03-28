@@ -3,8 +3,8 @@
 # Table name: words
 #
 #  id         :bigint           not null, primary key
-#  kind       :integer          default(0), not null
-#  level      :integer          default(0), not null
+#  kind       :integer          default("nan"), not null
+#  level      :integer          default("primer"), not null
 #  reading    :text             not null
 #  word       :string(255)      not null
 #  created_at :datetime         not null
