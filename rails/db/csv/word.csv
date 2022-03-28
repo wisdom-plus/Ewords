@@ -803,3 +803,33 @@ utils,略語,utilities（ユーティリティー）の略,abbreviation
 val,略語,valueの略,abbreviation
 var,略語,variableの略,abbreviation
 vars,略語,variablesの略,abbreviation
+API,頭文字,Application Programming Interfaceのこと,inital
+CI,頭文字,Continuous Integrationのこと,inital
+CLI,頭文字,Command Line Interfaceのこと,inital
+CPU,頭文字,Central Processing Unitのこと,inital
+CSS,頭文字,Cascading Style Sheetのこと,inital
+DNS,頭文字,Domain Name Systemのこと,inital
+DOM,頭文字,Document Object Modelのこと,inital
+HTML,頭文字,HyperText Markup Languageのこと,inital
+HTTP,頭文字,HyperText Transfer Protocolのこと,inital
+HTTPS,頭文字,HyperText Transfer Protocol Secureのこと,inital
+IDE,頭文字,Integrated Development Environmentのこと,inital
+IE,頭文字,Id Est（ラテン語で「つまり」）、Internet Explorerのこと,inital
+IO,頭文字,Input/Outputのこと,inital
+IP,頭文字,Internet Protocolのこと,inital
+JSON,頭文字,JavaScript Object Notationのこと,inital
+NFC,頭文字,Near Field Communicationのこと,inital
+OS,頭文字,Operating Systemのこと,inital
+RE,頭文字,Regular Expressionのこと,inital
+RGB,頭文字,Red Green Blueのこと,inital
+SDK,頭文字,Software Development Kitのこと,inital
+SQL,頭文字,Structured Query Languageのこと,inital
+SSH,頭文字,Secure SHellのこと,inital
+SSL,頭文字,Secure Sockets Layerのこと,inital
+UI,頭文字,User Interfaceのこと,inital
+URI,頭文字,Uniform Resource Identifierのこと,inital
+URL,頭文字,Uniform Resource Locatorのこと,inital
+VM,頭文字,Virtual Machineのこと,inital
+WIP,頭文字,Work In Progress（作業中）のこと,inital
+WWW,頭文字,World Wide Webのこと,inital
+XML,頭文字,eXtensible Markup Languageのこと,inital
