@@ -54,6 +54,7 @@ gem 'rails-i18n', '~> 7.0.0'
 
 gem 'devise'
 
+gem 'activerecord-import'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
