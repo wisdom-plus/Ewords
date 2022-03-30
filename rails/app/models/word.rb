@@ -13,4 +13,25 @@
 class Word < ApplicationRecord
   enum level: { primer: 0, basic: 1, abvance: 2, abbreviation: 3, initial: 4 }
   enum kind: { nan: 0, '名詞': 1, '動詞': 2, '副詞': 3, '形容詞': 4, '前置詞': 5, '代名詞': 6, '略語': 7, '頭文字': 8 }
+
+  QUESTION_NUM = 10
+  CHOICE_NUM = 4
+
+  def self.random_record(level,num)
+    ids = where(level: level).pluck(:id).sample(num)
+    where(id: ids)
+  end
+
+  def self.answer(level)
+    self.random_record(level,QUESTION_NUM)
+  end
+
+  def self.except_record(ids,level)
+    n = ids.length * (CHOICE_NUM - 1)
+    where.not(id: ids).where(level: level).sample(n)
+  end
+
+  def self.choices(answer_record,level)
+    option = except_record(answer_record.length,level)
+  end
 end
