@@ -4,7 +4,7 @@ class WordsController < ApplicationController
 
   def show
     answer = Word.answer(show_params)
-    options =
+    option = Word.choices(answer,show_params)
   end
 
   private
