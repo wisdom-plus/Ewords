@@ -26,12 +26,19 @@ class Word < ApplicationRecord
     self.random_record(level,QUESTION_NUM)
   end
 
-  def self.except_record(ids,level)
-    n = ids.length * (CHOICE_NUM - 1)
-    where.not(id: ids).where(level: level).sample(n)
+  def self.except_record(records,level)
+    n = records.length * (CHOICE_NUM - 1)
+    where.not(id: records.ids).where(level: level).sample(n)
   end
 
   def self.choices(answer_record,level)
-    option = except_record(answer_record.length,level)
+    miss_option = except_record(answer_record,level)
+    choices = []
+
+    QUESTION_NUM.times do |n|
+      arr = miss_option[n..(n+2)].push(answer_record[n]).shuffle
+      choices.push(arr)
+    end
+    choices
   end
 end
