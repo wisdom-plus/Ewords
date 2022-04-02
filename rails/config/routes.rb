@@ -22,8 +22,8 @@
 #                                dashboard GET    /dashboard(.:format)                                                                              home#dashboard
 #                                   policy GET    /policy(.:format)                                                                                 home#policy
 #                           private_policy GET    /private_policy(.:format)                                                                         home#private_policy
-#                                    words GET    /words(.:format)                                                                                  words#index
-#                                     word GET    /words/:id(.:format)                                                                              words#show
+#                               study_word GET    /study/:study_id/words/:id(.:format)                                                              words#show
+#                              study_index GET    /study(.:format)                                                                                  study#index
 #                        letter_opener_web        /letter_opener                                                                                    LetterOpenerWeb::Engine
 #         turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede
 #         turbo_resume_historical_location GET    /resume_historical_location(.:format)                                                             turbo/native/navigation#resume
@@ -77,6 +77,8 @@ Rails.application.routes.draw do
   root to: 'home#dashboard'
   get '/policy', to: 'home#policy'
   get '/private_policy', to: 'home#private_policy'
-  resources :words, only: %i[index show]
+  resources :study, only: %i[index] do
+    resources :words,only: %i[show]
+  end
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
