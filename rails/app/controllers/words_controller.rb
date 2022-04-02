@@ -1,6 +1,4 @@
 class WordsController < ApplicationController
-  def index; end
-
   def show
     @answer = Word.answer(show_params)
     @options = Word.choices(answer, show_params)
