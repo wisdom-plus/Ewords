@@ -78,7 +78,7 @@ Rails.application.routes.draw do
   get '/policy', to: 'home#policy'
   get '/private_policy', to: 'home#private_policy'
   resources :study, only: %i[index] do
-    resources :words,only: %i[show]
+    resources :words, only: %i[show]
   end
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
