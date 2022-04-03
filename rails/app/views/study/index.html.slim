@@ -1,0 +1,16 @@
+= turbo_frame_tag 'body' do
+  .bg-gray-100.dark:bg-gray-800.flex [data-scroll-target='home' data-controller='scroll']
+    = render 'shared/sidebar'
+    .flex.flex-col.flex-1.w-full.md:space-y-4
+      = render 'shared/flash_message'
+      = render 'shared/header'
+      main.overflow-y-auto
+        = turbo_frame_tag 'main' do
+          .h-scree.px-4.md:px-6
+            .grid.grid-cols-1.gap-4.my-4
+              .w-full
+                .shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-700.relative
+                  h1.text-xl.text-gray-800.dark:text-white.border-b-1.border-gray-200.pb-3
+                    | 英語学習
+                  p.
+                    | ITエンジニアに必要な英単語を出題していきます。
