@@ -19,47 +19,61 @@
                       | 難易度は初級、中級、上級の3段階と省略語と頭文字の2種類があります。
                       br
                       | 単語を覚えてきたら、腕試しで自分の実力を計測しよう
-            .grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-3.gap-4.my-4
-              .w-full
+            .flex.flex-col.gap-4.my-4.sm:flex-row
+              .w-full.basis-1/3
                 .shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-700.relative
                   h1.text-xl.text-gray-800.dark:text-white.border-b-2.border-gray-200.pb-3
                     | 初級英単語
-              .w-full
+                  .mt-2.px-2.leading-7.text-gray-700.border-b-2.border-gray-200.pb-8.h-32.min-h-full
+                    p
+                      | 全問題数100問
+                      br
+                      | 初級レベルの英単語集です。まずはこちらから、基礎から学んでください。
+                  .flex.justify-center.mt-4
+                    = link_to "学習する" ,word_study_index_path(type: 'primer'),class: "px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+              .w-full.basis-1/3
                 .shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-700.relative
-                  p.text-sm.w-max.text-gray-700.dark:text-white.font-semibold.border-b.border-gray-200
-                    |  Project Paid
-                  .flex.items-end.space-x-2.my-6
-                    p.text-5xl.text-black.dark:text-white.font-bold
-                      |  23
-                    span.text-green-500.text-xl.font-bold.flex.items-center
-                      svg.h-3[width="20" fill="currentColor" height="20" viewbox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"]
-                        path[d="M1675 971q0 51-37 90l-75 75q-38 38-91 38-54 0-90-38l-294-293v704q0 52-37.5 84.5t-90.5 32.5h-128q-53 0-90.5-32.5t-37.5-84.5v-704l-294 293q-36 38-90 38t-90-38l-75-75q-38-38-38-90 0-53 38-91l651-651q35-37 90-37 54 0 91 37l651 651q37 39 37 91z"]
-                      |  12%
-                  .dark:text-white
-                    .flex.items-center.pb-2.mb-2.text-sm.space-x-12.md:space-x-24.justify-between.border-b.border-gray-200
-                      p
-                        |  User paid
-                      .flex.items-end.text-xs
-                        |  21
-                        span.flex.items-center
-                          svg.h-3.text-green-500[width="20" fill="currentColor" height="20" viewbox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"]
-                            path[d="M1675 971q0 51-37 90l-75 75q-38 38-91 38-54 0-90-38l-294-293v704q0 52-37.5 84.5t-90.5 32.5h-128q-53 0-90.5-32.5t-37.5-84.5v-704l-294 293q-36 38-90 38t-90-38l-75-75q-38-38-38-90 0-53 38-91l651-651q35-37 90-37 54 0 91 37l651 651q37 39 37 91z"]
-                          |  20%
-                    .flex.items-center.mb-2.pb-2.text-sm.space-x-12.md:space-x-24.justify-between.border-b.border-gray-200
-                      p
-                        |  Income
-                      .flex.items-end.text-xs
-                        |  10
-                        span.flex.items-center
-                          svg.h-3.text-green-500[width="20" fill="currentColor" height="20" viewbox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"]
-                            path[d="M1675 971q0 51-37 90l-75 75q-38 38-91 38-54 0-90-38l-294-293v704q0 52-37.5 84.5t-90.5 32.5h-128q-53 0-90.5-32.5t-37.5-84.5v-704l-294 293q-36 38-90 38t-90-38l-75-75q-38-38-38-90 0-53 38-91l651-651q35-37 90-37 54 0 91 37l651 651q37 39 37 91z"]
-                          |  2%
-                    .flex.items-center.text-sm.space-x-12.md:space-x-24.justify-between
-                      p
-                        |  Royal tees
-                      .flex.items-end.text-xs
-                        |  434
-                        span.flex.items-center
-                          svg.h-3.text-red-500.rotate-180.transform[width="20" fill="currentColor" height="20" viewbox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"]
-                            path[d="M1675 971q0 51-37 90l-75 75q-38 38-91 38-54 0-90-38l-294-293v704q0 52-37.5 84.5t-90.5 32.5h-128q-53 0-90.5-32.5t-37.5-84.5v-704l-294 293q-36 38-90 38t-90-38l-75-75q-38-38-38-90 0-53 38-91l651-651q35-37 90-37 54 0 91 37l651 651q37 39 37 91z"]
-                          |  12%
+                  h1.text-xl.text-gray-800.dark:text-white.border-b-2.border-gray-200.pb-3
+                    | 中級英単語
+                  .mt-2.px-2.leading-7.text-gray-700.border-b-2.border-gray-200.pb-8.h-32
+                    p
+                      | 全問題数300問
+                      br
+                      | 中級レベルの英単語集です。慣れてきたらこちらへ
+                  .flex.justify-center.mt-4
+                    = link_to "学習する" ,word_study_index_path(type: 'basic'),class: "px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+              .w-full.basis-1/3
+                .shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-700.relative
+                  h1.text-xl.text-gray-800.dark:text-white.border-b-2.border-gray-200.pb-3
+                    | 上級英単語
+                  .mt-2.px-2.leading-7.text-gray-700.border-b-2.border-gray-200.pb-8.h-32
+                    p
+                      | 全問題数300問
+                      br
+                      | 上級レベルの英単語集です。これをマスターすれば基本的な文は読めるようになります。
+                  .flex.justify-center.mt-4
+                    = link_to "学習する" ,word_study_index_path(type: 'abvance'),class: "px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+            .flex.flex-col.gap-4.my-4.sm:flex-row
+              .w-full.basis-1/3
+                .shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-700.relative
+                  h1.text-xl.text-gray-800.dark:text-white.border-b-2.border-gray-200.pb-3
+                    | 省略語
+                  .mt-2.px-2.leading-7.text-gray-700.border-b-2.border-gray-200.pb-8.h-32.min-h-full
+                    p
+                      | 全問題数70問
+                      br
+                      | プログラミングでよく見る略語の問題集です。
+                  .flex.justify-center.mt-4
+                    = link_to "学習する" ,word_study_index_path(type: 'abbreviation'),class: "px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+              .w-full.basis-1/3
+                .shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-700.relative
+                  h1.text-xl.text-gray-800.dark:text-white.border-b-2.border-gray-200.pb-3
+                    | 頭文字
+                  .mt-2.px-2.leading-7.text-gray-700.border-b-2.border-gray-200.pb-8.h-32
+                    p
+                      | 全問題数30問
+                      br
+                      | プログラミングでよく見る頭文字の問題集です。
+                  .flex.justify-center.mt-4
+                    = link_to "学習する" ,word_study_index_path(type: 'initial'),class: "px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+              .w-full.basis-1/3
