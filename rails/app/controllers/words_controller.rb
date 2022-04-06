@@ -1,12 +1,6 @@
 class WordsController < ApplicationController
   def show
-    @answer = Word.answer(show_params)
-    @options = Word.choices(answer, show_params)
+    @answer = Word.answer(params[:level])
+    @options = Word.choices(@answer, params[:level])
   end
-
-  private
-
-    def show_params
-      params.require(:word).permit(:level)
-    end
 end
