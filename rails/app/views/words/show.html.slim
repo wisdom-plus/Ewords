@@ -6,6 +6,19 @@
       = render 'shared/header'
       main.overflow-y-auto
         = turbo_frame_tag 'main' do
-          .h-scree.px-4.md:px-6
-            h1.text-4xl.forn-semibold.text-gray-800.dark:text-white
-              | test
+          .h-screen.px-4.md:px-6
+            .grid.grid-cols-1.gap-4.my-4
+              .w-full
+                .shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-700.relative.h-85vh
+                  h1.text-2xl.text-gray-800.dark:text-white.border-b-2.border-gray-200.pb-3
+                    | 英単語学習
+                  .mt-2.px-2
+                    h1.text-5xl.text-gray-800.dark:text-white
+                      = @answer[0].reading
+                  .flex.flex-col.gap-4.my-4.sm:flex-row
+                    - @options[0].each do |option|
+                      .w-full.basis-1/4
+                        button.shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-600.relative.hover:bg-gray-100.dark:hover:bg-gray-500
+                          .flex.items-end.space-x-2.my-6
+                            p.text-4xl.text-black.dark:text-white.font-bold
+                              =option.word
