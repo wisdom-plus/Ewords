@@ -5,9 +5,19 @@ export default class extends Controller {
   next(event) {
     const click_option = event.currentTarget;
     if (click_option.id === "correct") {
-      console.log(click_option);
+      click_option.classList.remove(
+        "hover:bg-gray-100",
+        "dark:border-gray-400",
+        "dark:hover:bg-gray-500"
+      );
+      click_option.classList.add("bg-green-200", "dark:bg-green-300");
     } else {
-      console.log(click_option);
+      click_option.classList.remove(
+        "hover:bg-gray-100",
+        "dark:border-gray-400",
+        "dark:hover:bg-gray-500"
+      );
+      click_option.classList.add("bg-red-200", "dark:bg-red-300");
     }
     this.remove_hidden();
   }
