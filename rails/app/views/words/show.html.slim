@@ -18,7 +18,15 @@
                   .flex.flex-col.gap-4.mt-24.mb-4.sm:flex-row[ data-controller='word']
                     - @options[@num].each do |option|
                       .w-full.basis-1/4
-                        button type = 'button' data-action="click->word#next" class="shadow-lg px-4 py-6 w-full bg-white dark:bg-gray-600 relative hover:bg-gray-100 dark:hover:bg-gray-500 border-gray-200 rounded border dark:border-gray-400" id="#{"correct" if option.reading === @answer[0].reading}"
+                        button type = 'button' data-action="click->word#next" class="shadow-lg px-4 py-6 w-full bg-white dark:bg-gray-600 relative hover:bg-gray-100 dark:hover:bg-gray-500 border-gray-200 rounded border dark:border-gray-400" id="#{"correct" if option.reading === @answer[@num].reading}"
                           .flex.items-end.space-x-2.my-6
                             p.text-4xl.text-black.dark:text-white.font-bold
                               =option.word
+                            -if option.reading === @answer[@num].reading
+                              svg class="mark_icon hidden h-12 w-12 text-green-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
+                                circle cx="12" cy="12" r="10"
+                            - else
+                              svg class="mark_icon hidden h-12 w-12 text-red-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                path stroke="none" d="M0 0h24v24H0z"
+                                line x1="18" y1="6" x2="6" y2="18"
+                                line x1="6" y1="6" x2="18" y2="18"
