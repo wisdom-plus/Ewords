@@ -2,6 +2,8 @@ import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="word"
 export default class extends Controller {
+  static targets = ["next"];
+
   next(event) {
     const click_option = event.currentTarget;
     if (click_option.id === "correct") {
@@ -20,6 +22,7 @@ export default class extends Controller {
       click_option.classList.add("bg-red-200", "dark:bg-red-300");
     }
     this.remove_hidden();
+    this.next_button();
   }
 
   remove_hidden() {
@@ -27,5 +30,10 @@ export default class extends Controller {
     icon.forEach(function (value) {
       value.classList.remove("hidden");
     });
+  }
+
+  next_button() {
+    const next_button = this.nextTarget;
+    next_button.classList.remove("hidden");
   }
 }
