@@ -8,25 +8,30 @@
         = turbo_frame_tag 'main' do
           .h-screen.px-4.md:px-6
             .grid.grid-cols-1.gap-4.my-4
-              .w-full
+              .w-full[ data-controller='word']
                 .shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-700.relative.h-85vh
                   h1.text-2xl.text-gray-800.dark:text-white.border-b-2.border-gray-200.pb-3
                     | 英単語学習
-                  .mt-2.px-2
+                  =turbo_frame_tag 'word',class:'mt-2 px-2'
                     h1.text-5xl.text-gray-800.dark:text-white
                       = @answer[@num].reading
-                  .flex.flex-col.gap-4.mt-24.mb-4.sm:flex-row[ data-controller='word']
-                    - @options[@num].each do |option|
-                      .w-full.basis-1/4
-                        button type = 'button' data-action="click->word#next" class="shadow-lg px-4 py-6 w-full bg-white dark:bg-gray-600 relative hover:bg-gray-100 dark:hover:bg-gray-500 border-gray-200 rounded border dark:border-gray-400" id="#{"correct" if option.reading === @answer[@num].reading}"
-                          .flex.items-end.space-x-2.my-6
-                            p.text-4xl.text-black.dark:text-white.font-bold
-                              =option.word
-                            -if option.reading === @answer[@num].reading
-                              svg class="mark_icon hidden h-12 w-12 text-green-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                                circle cx="12" cy="12" r="10"
-                            - else
-                              svg class="mark_icon hidden h-12 w-12 text-red-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                path stroke="none" d="M0 0h24v24H0z"
-                                line x1="18" y1="6" x2="6" y2="18"
-                                line x1="6" y1="6" x2="18" y2="18"
+                    .flex.flex-col.gap-4.mt-24.mb-4.sm:flex-row
+                      - @options[@num].each do |option|
+                        .w-full.basis-1/4
+                          button type = 'button' data-action="click->word#next" class="shadow-lg px-4 py-6 w-full bg-white dark:bg-gray-600 relative hover:bg-gray-100 dark:hover:bg-gray-500 border-gray-200 rounded border dark:border-gray-400" id="#{"correct" if option.reading === @answer[@num].reading}"
+                            .flex.items-end.space-x-2.my-6
+                              p.text-4xl.text-black.dark:text-white.font-bold
+                                =option.word
+                              -if option.reading === @answer[@num].reading
+                                svg class="mark_icon hidden h-12 w-12 text-green-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
+                                  circle cx="12" cy="12" r="10"
+                              - else
+                                svg class="mark_icon hidden h-12 w-12 text-red-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                  path stroke="none" d="M0 0h24v24H0z"
+                                  line x1="18" y1="6" x2="6" y2="18"
+                                  line x1="6" y1="6" x2="18" y2="18"
+                    .flex.justify-center
+                      - if @num === 9
+                        =link_to 'Topへ' , study_index_path,data:{turbo_action: 'replace', word_target: 'next'}, class:'hidden px-10 py-4 mt-12 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
+                      - else
+                        =link_to '次へ' , root_path,data: { word_target: 'next'}, class:'hidden px-10 py-4 mt-12 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
