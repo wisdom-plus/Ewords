@@ -4,7 +4,7 @@ class WordsController < ApplicationController
   def show
     @answer = Word.answer(params[:level])
     @options = Word.choices(@answer, params[:level])
-    set_session(@answer.ids, 0)
+    set_session(@answer.ids, 9)
   end
 
   private
