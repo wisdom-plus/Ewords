@@ -8,6 +8,7 @@ export default class extends Controller {
     const click_option = event.currentTarget;
     if (click_option.id === "correct") {
       click_option.classList.remove(
+        "bg-white",
         "hover:bg-gray-100",
         "dark:border-gray-400",
         "dark:hover:bg-gray-500"
@@ -15,6 +16,7 @@ export default class extends Controller {
       click_option.classList.add("bg-green-200", "dark:bg-green-300");
     } else {
       click_option.classList.remove(
+        "bg-white",
         "hover:bg-gray-100",
         "dark:border-gray-400",
         "dark:hover:bg-gray-500"
