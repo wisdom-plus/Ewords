@@ -12,7 +12,7 @@
                 .shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-700.relative.h-85vh
                   h1.text-2xl.text-gray-800.dark:text-white.border-b-2.border-gray-200.pb-3
                     | 英単語学習
-                  =turbo_frame_tag 'word',class:'mt-2 px-2'
+                  =turbo_frame_tag 'word',class:'mt-2 px-2' do
                     h1.text-5xl.text-gray-800.dark:text-white
                       = @answer[session[:num]].reading
                     .flex.flex-col.gap-4.mt-24.mb-4.sm:flex-row
@@ -31,7 +31,7 @@
                                   line x1="18" y1="6" x2="6" y2="18"
                                   line x1="6" y1="6" x2="18" y2="18"
                     .flex.justify-center
-                      - if @num === 9
-                        =link_to 'Topへ' , study_index_path,data:{turbo_action: 'replace', word_target: 'next'}, class:'hidden px-10 py-4 mt-12 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
+                      - if session[:num] === 9
+                        =link_to 'Topへ' , study_index_path,data:{turbo: 'false', word_target: 'next'}, class:'hidden px-10 py-4 mt-12 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
                       - else
                         =link_to '次へ' , root_path,data: { word_target: 'next'}, class:'hidden px-10 py-4 mt-12 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
