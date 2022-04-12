@@ -1,25 +1,27 @@
 class WordsController < ApplicationController
-  before_action :reset_session
 
   def show
     if params[:num] == "0"
-      @answer = Word.answer(params[:level])
-      @options = Word.choices(@answer, params[:level])
-      set_session(@answer.ids, params[:num])
+      reset_session
+      ids = Word.answer_ids(params[:level])
+      set_session(ids, params[:num])
     else
-      session[:num] = prams[:num]
+      ids = session[:answer_ids]
+      session[:num] = params[:num]
     end
+    @answer =Word.find_by(id: ids[params[:num].to_i])
+    @options = Word.choices(@answer, params[:level])
   end
 
   private
 
   def reset_session
     session.delete(:num)
-    session.delete(:answer)
+    session.delete(:answer_ids)
   end
 
   def set_session(ids,num)
-    session[:answer] = ids
+    session[:answer_ids] = ids
     session[:num] = num
   end
 end
