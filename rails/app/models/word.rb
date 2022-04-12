@@ -30,8 +30,8 @@ class Word < ApplicationRecord
     where.not(id: answer_id).where(level: level).sample(n)
   end
 
-  def self.choices(answer_record, level)
-    choices = except_records(answer_record.id, level)
+  def self.choices(answer_record)
+    choices = except_records(answer_record.id, answer_recored.level)
     choices.push(answer_record).shuffle
   end
 end
