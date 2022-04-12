@@ -17,28 +17,21 @@ class Word < ApplicationRecord
   QUESTION_NUM = 10
   CHOICE_NUM = 4
 
-  def self.random_record(level, num)
+  def self.random_record_ids(level, num)
     ids = where(level: level).pluck(:id).sample(num)
-    where(id: ids)
   end
 
-  def self.answer(level)
-    random_record(level, QUESTION_NUM)
+  def self.answer_ids(level)
+    random_record_ids(level, QUESTION_NUM)
   end
 
-  def self.except_record(records, level)
-    n = records.length * (CHOICE_NUM - 1)
-    where.not(id: records.ids).where(level: level).sample(n)
+  def self.except_records(id, level)
+    n = CHOICE_NUM - 1
+    where.not(id: id).where(level: level).sample(n)
   end
 
   def self.choices(answer_record, level)
-    miss_option = except_record(answer_record, level)
-    choices = []
-
-    QUESTION_NUM.times do |n|
-      arr = miss_option[n..(n + 2)].push(answer_record[n]).shuffle
-      choices.push(arr)
-    end
-    choices
+    choices = except_records(answer_record.id, level)
+    choices.push(answer_record).shuffle
   end
 end
