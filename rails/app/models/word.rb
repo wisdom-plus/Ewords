@@ -18,16 +18,16 @@ class Word < ApplicationRecord
   CHOICE_NUM = 4
 
   def self.random_record_ids(level, num)
-    ids = where(level: level).pluck(:id).sample(num)
+    where(level: level).pluck(:id).sample(num)
   end
 
   def self.answer_ids(level)
     random_record_ids(level, QUESTION_NUM)
   end
 
-  def self.except_records(id, level)
+  def self.except_records(answer_id, level)
     n = CHOICE_NUM - 1
-    where.not(id: id).where(level: level).sample(n)
+    where.not(id: answer_id).where(level: level).sample(n)
   end
 
   def self.choices(answer_record, level)
