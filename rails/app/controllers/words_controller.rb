@@ -2,7 +2,7 @@ class WordsController < ApplicationController
   before_action :reset_session, if: :first_time?
 
   def show
-    ids = if first_time?
+    ids = if first_question?
             Word.answer_ids(params[:level])
           else
             session[:answer_ids]
@@ -14,7 +14,7 @@ class WordsController < ApplicationController
 
   private
 
-    def first_time?
+    def first_question?
       params[:num] == '0'
     end
 
