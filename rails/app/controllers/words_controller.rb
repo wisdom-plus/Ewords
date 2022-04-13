@@ -1,12 +1,12 @@
 class WordsController < ApplicationController
-  before_action :reset_session, if: :first_time?
+  before_action :reset_session, if: :first_question?
 
   def show
-    ids = if first_question?
-            Word.answer_ids(params[:level])
-          else
-            session[:answer_ids]
-          end
+    if first_question?
+      ids = Word.answer_ids(params[:level])
+    else
+      ids = session[:answer_ids]
+    end
     @answer = Word.find(ids[params[:num].to_i])
     @options = Word.choices(@answer)
     set_session(ids, params[:num])
@@ -21,6 +21,7 @@ class WordsController < ApplicationController
     def reset_session
       session.delete(:num)
       session.delete(:answer_ids)
+      session.delete(:correct_answers)
     end
 
     def set_session(ids, num)
