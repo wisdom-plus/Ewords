@@ -17,7 +17,7 @@ export default class extends Controller {
           "dark:hover:bg-gray-500"
         );
         click_option.classList.add("bg-green-200", "dark:bg-green-300");
-        this.set_session(true);
+        this.set_params(true);
       } else {
         click_option.classList.remove(
           "bg-white",
@@ -26,7 +26,7 @@ export default class extends Controller {
           "dark:hover:bg-gray-500"
         );
         click_option.classList.add("bg-red-200", "dark:bg-red-300");
-        this.set_session(false);
+        this.set_params(false);
       }
       this.remove_hidden();
       this.next_button();
@@ -46,16 +46,12 @@ export default class extends Controller {
     next_button.classList.remove("hidden");
   }
 
-  set_session(answer) {
-    const correct_answer = sessionStorage.getItem("correct_answer");
-    if (correct_answer == null) {
-      sessionStorage.setItem("correct_answer", answer);
-    } else {
-      const correct_answer_arr = correct_answer.split(",");
-      correct_answer_arr.push(answer);
-      const new_correct_answer = correct_answer_arr.join("");
-      sessionStorage.setItem("correct_answer", new_correct_answer);
-      console.log(new_correct_answer);
+  set_params(answer) {
+    const link = document.getElementById("next_button");
+    if (link) {
+      const url = link.getAttribute("href");
+      const new_url = url.replace("answer=false", "answer=" + answer);
+      link.setAttribute("href", new_url);
     }
   }
 }
