@@ -31,7 +31,7 @@ class Word < ApplicationRecord
   end
 
   def self.choices(answer_record)
-    choices = except_records(answer_record.id, answer_recored.level)
+    choices = except_records(answer_record.id, answer_record.level)
     choices.push(answer_record).shuffle
   end
 end
