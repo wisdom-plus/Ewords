@@ -33,6 +33,6 @@
                                     line x1="6" y1="6" x2="18" y2="18"
                       .flex.justify-center
                         - if session[:num] == "9"
-                          = button_to 'Topへ' , study_index_path(answer: false,level: params[:level]),data: { word_target: 'next',turbo_method: 'post'},id: 'next_button', class:'hidden px-10 py-4 mt-12 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
+                          = button_to 'Topへ' , study_index_path(level: params[:level]),data: { word_target: 'next',turbo_method: 'post'},id: 'result_button',class:'hidden px-10 py-4 mt-12 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
                         - else
                           =link_to '次へ' , word_study_index_path(answer: false,level: params[:level],num: ( session[:num].to_i + 1)),data: { word_target: 'next',turbo_action: 'replace'},id: 'next_button', class:'hidden px-10 py-4 mt-12 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple'
