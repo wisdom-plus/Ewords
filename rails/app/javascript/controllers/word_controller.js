@@ -18,6 +18,7 @@ export default class extends Controller {
         );
         click_option.classList.add("bg-green-200", "dark:bg-green-300");
         this.set_params(true);
+        this.result_url(true);
       } else {
         click_option.classList.remove(
           "bg-white",
@@ -27,6 +28,7 @@ export default class extends Controller {
         );
         click_option.classList.add("bg-red-200", "dark:bg-red-300");
         this.set_params(false);
+        this.result_url(false);
       }
       this.remove_hidden();
       this.next_button();
@@ -52,6 +54,16 @@ export default class extends Controller {
       const url = link.getAttribute("href");
       const new_url = url.replace("answer=false", "answer=" + answer);
       link.setAttribute("href", new_url);
+    }
+  }
+
+  result_url(answer) {
+    const result_button = document.getElementById("result_button");
+    if (result_button) {
+      const form = document.forms[0];
+      const url = form.action;
+      const new_url = url.concat(`&answer=${answer}`);
+      form.action = new_url;
     }
   }
 }
