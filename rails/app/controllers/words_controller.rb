@@ -2,7 +2,10 @@ class WordsController < ApplicationController
   before_action :reset_session, if: :first_question?
 
   def show
-    if first_question?
+    if finish?
+      redirect_to study_index_path,status: :see_other
+      return
+    elsif first_question?
       ids = Word.answer_ids(params[:level])
     else
       ids = session[:answer_ids]
@@ -19,6 +22,10 @@ class WordsController < ApplicationController
 
     def first_question?
       params[:num] == '0'
+    end
+
+    def finish?
+      params[:num] == '10'
     end
 
     def reset_session
