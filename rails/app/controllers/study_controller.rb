@@ -19,7 +19,7 @@ class StudyController < ApplicationController
   end
 
   def result
-    @answer_record = Word.where(id: session[:ansewer_ids])
+    @answer_record = Word.where(id: session[:answer_ids])
     @answer = session[:correct_answers]
   end
 
