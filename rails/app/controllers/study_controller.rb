@@ -1,5 +1,6 @@
 class StudyController < ApplicationController
   before_action :reset_session, if: :first_question?,only: :show
+  after_action :reset_session,only: :result
   def index; end
 
   def show
@@ -20,7 +21,7 @@ class StudyController < ApplicationController
 
   def result
     @answer_record = Word.where(id: session[:answer_ids])
-    @answer = session[:correct_answers]
+    @result = session[:correct_answers]
   end
 
 
