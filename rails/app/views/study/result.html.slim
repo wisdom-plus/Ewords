@@ -12,17 +12,28 @@
                 .shadow-lg.px-4.py-6.w-full.bg-white.dark:bg-gray-700.relative.h-85vh
                   h1.text-2xl.text-gray-800.dark:text-white.border-b-2.border-gray-200.pb-3
                     | 英単語学習 結果
-                  - @answer_record.each.with_index(1) do |answer, index|
-                    p
-                      |
-                        #{index}問
-                    p
-                      = answer.word
-                    p
-                      = answer.reading
-                    - if @answer[index - 1] == "true"
-                      p
-                        | 正解
-                    - elsif @answer[index - 1] == "false"
-                      p
-                        | 不正解
+                  .w-full.mb-8.overflow-hidden.rounded-lg.shodow-xs
+                    .w-full.overflow-x-auto
+                      table.w-full.whitespace-no-wrap
+                        thead
+                          tr.taxt-xs.font-semibold.tracking-wide.text-left.text-gray-500.uppercase.border-b.dark:boder-gray-700.bg-gray-50.dark:text-gray-400.dark:bg-gray-800
+                            th.px-4.py-3
+                              | 問題番号
+                            th.px-4.py-3
+                              | 問題
+                            th.px-4.py-3
+                              | 意味
+                            th.px-4.py-3
+                              | 正誤
+                        tbody.bg-white.divide-y.dark:fivide-gray-700.dark:bg-gray-800
+                          - @answer_record.each.with_index(1) do |answer, index|
+                            tr.text-gray-700.dark:text-gray-400
+                              td.px-4.py-3.text-sm
+                                |
+                                  #{index}問
+                              td.px-4.py-3.text-sm
+                                = answer.word
+                              td.px-4.py-3.text-sm
+                                = answer.reading
+                              td.px-4.py-3.text-sm
+                                = @result[index - 1] == 'true' ? '正解' : '不正解'
