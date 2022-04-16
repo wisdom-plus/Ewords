@@ -14,9 +14,9 @@
                     | 英単語学習 結果
                   .w-full.mb-8.overflow-hidden.rounded-lg.shodow-xs
                     .w-full.overflow-x-auto
-                      table.w-full.whitespace-no-wrap
+                      table.w-full.whitespace-no-wrap.table-auto
                         thead
-                          tr.taxt-xs.font-semibold.tracking-wide.text-left.text-gray-500.uppercase.border-b.dark:boder-gray-700.bg-gray-50.dark:text-gray-400.dark:bg-gray-800
+                          tr.text-xs.font-semibold.tracking-wide.text-left.text-gray-500.uppercase.border-b.dark:boder-gray-700.bg-gray-50.dark:text-gray-400.dark:bg-gray-800
                             th.px-4.py-3
                               | 問題番号
                             th.px-4.py-3
@@ -35,5 +35,9 @@
                                 = answer.word
                               td.px-4.py-3.text-sm
                                 = answer.reading
-                              td.px-4.py-3.text-sm
-                                = @result[index - 1] == 'true' ? '正解' : '不正解'
+                              - if @result[index - 1] == 'true'
+                                td.px-4.py-3.text-sm.text-green-500
+                                  | 正解
+                              - elsif @result[index - 1] == 'false'
+                                td.px-4.py-3.text-sm.text-red-500
+                                  | 不正解
