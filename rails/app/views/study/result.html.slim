@@ -14,9 +14,9 @@
                     | 英単語学習 結果
                   .w-full.mb-8.overflow-hidden.rounded-lg.shodow-xs
                     .w-full
-                      table.w-11/12.whitespace-no-wrap.table-auto.mx-auto
+                      table.w-11/12.whitespace-no-wrap.table-auto.mx-auto.mt-4
                         thead
-                          tr.text-md.font-semibold.tracking-wide.text-left.text-gray-500.uppercase.border-b.dark:boder-gray-700.bg-gray-50.dark:text-gray-400.dark:bg-gray-800
+                          tr.text-md.font-semibold.tracking-wide.text-left.text-gray-500.uppercase.border-b.dark:boder-gray-700.bg-gray-200.dark:text-gray-400.dark:bg-gray-800
                             th.px-4.py-3
                               | 問題番号
                             th.px-4.py-3
@@ -25,9 +25,9 @@
                               | 意味
                             th.px-4.py-3
                               | 正誤
-                        tbody.bg-white.divide-y.dark:fivide-gray-700.dark:bg-gray-800
+                        tbody.bg-white.divide-y-2.dark:fivide-gray-700.dark:bg-gray-800
                           - @answer_record.each.with_index(1) do |answer, index|
-                            tr.text-gray-700.dark:text-gray-400
+                            tr.text-gray-700.dark:text-gray-400 class=(@result[index - 1] == 'true' ? "bg-green-200 dark:bg-green-300 " : " bg-red-200 dark:bg-red-300")
                               td.px-4.py-3.text-sm
                                 |
                                   #{index}問
@@ -36,10 +36,10 @@
                               td.px-4.py-3.text-sm
                                 = answer.reading
                               - if @result[index - 1] == 'true'
-                                td.px-4.py-3.text-sm.bg-green-200.dark:bg-green-300
+                                td.px-4.py-3.text-sm
                                   | 正解
                               - elsif @result[index - 1] == 'false'
-                                td.px-4.py-3.text-sm.bg-red-200.dark:bg-red-300
+                                td.px-4.py-3.text-sm
                                   | 不正解
                       p.text-6xl.flex.justify-center.mt-12
                         |
