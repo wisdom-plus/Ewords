@@ -1,12 +1,12 @@
 class StudyController < ApplicationController
-  before_action :reset_session, if: :first_question?,only: :show
+  before_action :reset_session, if: :first_question?, only: :show
   # after_action :reset_session,only: :result
   def index; end
 
   def show
     if finish?
       session[:correct_answers].push(params[:answer])
-      redirect_to result_study_index_path,status: :see_other
+      redirect_to result_study_index_path, status: :see_other
       return
     elsif first_question?
       ids = Word.answer_ids(params[:level])
@@ -22,9 +22,8 @@ class StudyController < ApplicationController
   def result
     @answer_record = Word.where(id: session[:answer_ids])
     @result = session[:correct_answers]
-    @answer_count = @result.filter { |answer| answer == 'true' }.count
+    @answer_count = @result.count { |answer| answer == 'true' }
   end
-
 
   private
 
