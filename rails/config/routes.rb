@@ -22,6 +22,10 @@
 #                                dashboard GET    /dashboard(.:format)                                                                              home#dashboard
 #                                   policy GET    /policy(.:format)                                                                                 home#policy
 #                           private_policy GET    /private_policy(.:format)                                                                         home#private_policy
+#                         word_study_index GET    /study/words/:level/:num(.:format)                                                                words#show
+#                       result_study_index GET    /study/result(.:format)                                                                           study#result
+#                              study_index GET    /study(.:format)                                                                                  study#index
+#                                          POST   /study(.:format)                                                                                  study#create
 #                        letter_opener_web        /letter_opener                                                                                    LetterOpenerWeb::Engine
 #         turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede
 #         turbo_resume_historical_location GET    /resume_historical_location(.:format)                                                             turbo/native/navigation#resume
@@ -75,5 +79,9 @@ Rails.application.routes.draw do
   root to: 'home#dashboard'
   get '/policy', to: 'home#policy'
   get '/private_policy', to: 'home#private_policy'
+  resources :study, only: %i[index create] do
+    get 'result', to: 'study#result', on: :collection
+    get 'words/:level/:num', to: 'study#show', on: :collection, as: 'word'
+  end
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
