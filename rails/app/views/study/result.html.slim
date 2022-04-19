@@ -41,6 +41,9 @@
                               - elsif @result[index - 1] == 'false'
                                 td.px-4.py-3.text-sm
                                   | 不正解
-                      p.text-6xl.flex.justify-center.mt-12
-                        |
-                          #{@answer_count}/#{@result.length}
+                      .flex.flex-row.mt-12.justify-center.w-11/12.mx-auto
+                        p.text-6xl.text-gray-700.pr-12
+                          span.text-3xl
+                            | 正答率:&nbsp;
+                          |
+                            #{@answer_count}/#{@result.length}
