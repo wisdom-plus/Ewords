@@ -19,7 +19,7 @@
                       .flex.flex-col.gap-4.mt-24.mb-4.sm:flex-row
                         - @options.each do |option|
                           .w-full.basis-1/4
-                            button type = 'button' data-action="click->word#next" class="shadow-lg px-4 py-6 w-full bg-white dark:bg-gray-600 relative hover:bg-gray-100 dark:hover:bg-gray-500 border-gray-200 rounded border dark:border-gray-400" id="#{"correct" if option.reading === @answer.reading}"
+                            button type = 'button' data-action="click->word#next" class="shadow-lg px-4 py-6 w-full bg-white dark:bg-gray-600 relative hover:bg-gray-100 dark:hover:bg-gray-500 border-gray-200 rounded border dark:border-gray-400 #{"incorrect" if option.reading != @answer.reading}" id="#{"correct" if option.reading === @answer.reading}"
                               .flex.items-end.space-x-2.my-6
                                 p.text-4xl.text-black.dark:text-white.font-bold
                                   =option.word
