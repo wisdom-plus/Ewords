@@ -24,10 +24,10 @@
                                 p.text-4xl.text-black.dark:text-white.font-bold
                                   =option.word
                                 -if option.reading === @answer.reading
-                                  svg class="mark_icon hidden h-12 w-12 text-green-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
+                                  svg class="mark_icon hidden h-12 w-12 text-green-500 correct_svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                                     circle cx="12" cy="12" r="10"
                                 - else
-                                  svg class="mark_icon hidden h-12 w-12 text-red-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                  svg class="mark_icon hidden h-12 w-12 text-red-500 incorrect_svg"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"
                                     path stroke="none" d="M0 0h24v24H0z"
                                     line x1="18" y1="6" x2="6" y2="18"
                                     line x1="6" y1="6" x2="18" y2="18"

@@ -27,12 +27,14 @@ RSpec.describe 'Study', type: :system, js: true do
       find("#correct").click
       expect(page).to have_selector '#correct' ,class:'bg-green-200'
       expect(page).to have_selector '#correct' ,class:'dark:bg-green-300'
+      expect(page).to have_selector 'svg.correct_svg'
     end
 
     it '選択肢ボタンを押すと変化する(不正解)' do
       first(".incorrect").click
       expect(page).to have_selector '.incorrect' ,class:'bg-red-200'
       expect(page).to have_selector '.incorrect' ,class:'dark:bg-red-300'
+      expect(page).to have_selector 'svg.incorrect_svg'
     end
   end
 
