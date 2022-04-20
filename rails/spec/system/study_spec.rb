@@ -36,6 +36,28 @@ RSpec.describe 'Study', type: :system, js: true do
       expect(page).to have_selector '.incorrect' ,class:'dark:bg-red-300'
       expect(page).to have_selector 'svg.incorrect_svg'
     end
+
+    it 'リンクが表示される(正解)' do
+      find("#correct").click
+      expect(page).to have_link '次へ', href: word_study_index_path(level: 'primer',num: 1,answer: true)
+    end
+
+    it 'リンクが表示される(不正解)' do
+      first(".incorrect").click
+      expect(page).to have_link '次へ', href: word_study_index_path(level: 'primer',num: 1,answer: false)
+    end
+
+    it 'リザルトリンクを表示される(正解)' do
+      visit word_study_index_path(level: 'primer',num: 9)
+      find("#correct").click
+      expect(page).to have_link 'リザルトへ', href: word_study_index_path(level: 'primer',num: 10,answer: true)
+    end
+
+    it 'リザルトリンクを表示される(不正解)' do
+      visit word_study_index_path(level: 'primer',num: 9)
+      first(".incorrect").click
+      expect(page).to have_link 'リザルトへ', href: word_study_index_path(level: 'primer',num: 10,answer: false)
+    end
   end
 
   describe 'result' do
