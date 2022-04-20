@@ -12,7 +12,7 @@
 #
 FactoryBot.define do
   factory :word do
-    sequence(:word) {|n| "test#{n}"}
+    sequence(:word) { |n| "test#{n}" }
     sequence(:reading) { |n| "テスト#{n}" }
     level { 1 }
     kind { 1 }
