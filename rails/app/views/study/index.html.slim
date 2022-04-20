@@ -4,7 +4,7 @@
     .flex.flex-col.flex-1.w-full.md:space-y-4
       = render 'shared/flash_message'
       = render 'shared/header'
-      main.overflow-y-auto.h-3/4
+      main.overflow-y-auto.h-3/4.2xl:h-screen
         = turbo_frame_tag 'main' do
           .px-4.md:px-6.flex.flex-col
             .grid.grid-cols-1.gap-4.my-4
