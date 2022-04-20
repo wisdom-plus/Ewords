@@ -61,6 +61,21 @@ RSpec.describe 'Study', type: :system, js: true do
   end
 
   describe 'result' do
+    before do
+      create_list(:word, 10,level: 'primer')
+      visit word_study_index_path(level: 'primer',num: 0)
+      9.times do |i|
+        find("#correct").click
+        click_link '次へ'
+      end
+      find("#correct").click
+      click_link 'リザルトへ'
+    end
 
+    it 'リザルトが表示される' do
+      expect(page).to have_link 'ダッシュボードへ', href: root_path
+      expect(page).to have_link '学習Topへ', href: study_index_path
+      expect(all('tr').length).to eq 10
+    end
   end
 end
