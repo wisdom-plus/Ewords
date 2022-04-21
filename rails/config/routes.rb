@@ -79,7 +79,7 @@ Rails.application.routes.draw do
   root to: 'home#dashboard'
   get '/policy', to: 'home#policy'
   get '/private_policy', to: 'home#private_policy'
-  resources :study, only: %i[index create] do
+  resources :study, only: %i[index] do
     get 'result', to: 'study#result', on: :collection
     get 'words/:level/:num', to: 'study#show', on: :collection, as: 'word'
   end
